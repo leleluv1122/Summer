@@ -5,9 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+    table { border-collapse: collapse; }
+    td { padding: 5px; border: solid 1px gray; }
+</style>
 </head>
 <body>
-	<table border=1>
+	<table>
 	<%
 		for(int i=1;i<10;i++){
 			out.println("<tr>");

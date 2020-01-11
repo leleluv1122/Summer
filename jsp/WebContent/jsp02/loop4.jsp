@@ -3,6 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>lecture1</title>
 <style>
     table { border-collapse: collapse; }
     td { padding: 5px; border: solid 1px gray; }
@@ -11,14 +12,13 @@
 <body>
 
 <table>
-  <tr>
-	<% 
-	    for (int i=1; i <= 10; ++i) { 
-	        out.println("    <td>" + i + "</td>");
-	    }
-	%>
-  </tr>
+  <% for (int i=0; i <= 3; ++i) { %>
+    <tr>  
+    <% for (int j=1; j <= 4; ++j) { %>
+        <td><%= i * 4 + j %></td>
+    <% } %>
+    </tr>
+  <% } %>
 </table>
-
 </body>
 </html>
