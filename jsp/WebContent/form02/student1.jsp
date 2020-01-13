@@ -28,8 +28,8 @@
 		else if (year == 0)
 			에러메시지 = "학년을 입력하세용";
 		else {
-			Student student = new Student(id, studentNumber, name, departmentId, year);
-			session.setAttribute("student", student);
+			Student st = new Student(id, studentNumber, name, departmentId, year);
+			session.setAttribute("student", st);
 			response.sendRedirect("student_success.jsp");
 			return;
 		}

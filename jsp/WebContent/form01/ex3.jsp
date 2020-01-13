@@ -15,12 +15,17 @@
 <body>
 	<%
 		String number1 = request.getParameter("number1");
+	
 		String r1 = request.getParameter("radio1");
+		String one_checked = "one".equals(r1) ? "checked" : "";
+		String two_checked = "two".equals(r1) ? "checked" : "";
+		String three_checked = "three".equals(r1) ? "checked" : "";
+		
 		String cmd = request.getParameter("cmd");
 		
-		if("one".equals(cmd)) number1 = "one";
-		else if("two".equals(cmd)) number1 = "two";
-		else if("three".equals(cmd)) number1 = "three";
+		if("one".equals(cmd)){ number1 = "one"; one_checked="checked";}
+		else if("two".equals(cmd)){ number1 = "two"; two_checked="checked";}
+		else if("three".equals(cmd)) {number1 = "three"; three_checked="checked";}
 	%>
 
 	<div class="container">
@@ -34,17 +39,17 @@
 			</div>
 
 			<div class="radio">
-				<label> <input type="radio" name="radio1" value="one" />
+				<label> <input type="radio" name="radio1" value="one" <%= one_checked %> />
 					one
 				</label>
 			</div>
 			<div class="radio">
-				<label> <input type="radio" name="radio1" value="two" />
+				<label> <input type="radio" name="radio1" value="two" <%= two_checked %> />
 					two
 				</label>
 			</div>
 			<div class="radio">
-				<label> <input type="radio" name="radio1" value="three" />
+				<label> <input type="radio" name="radio1" value="three" <%= three_checked %> />
 					three
 				</label>
 			</div>
