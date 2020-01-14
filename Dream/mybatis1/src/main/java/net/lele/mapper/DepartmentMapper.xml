@@ -4,8 +4,18 @@
 
 <mapper namespace="net.lele.mapper.DepartmentMapper">
 
-  <select id="findAll" resultType="Department">
-      SELECT * FROM Department
-  </select>
+	<cache flushInterval="1000" />
+
+	<select id="findAll" resultType="Department">
+		SELECT *, NOW() time FROM
+		Department
+	</select>
+
+	<update id="update">
+		UPDATE Department
+		SET departmentName = #{departmentName}
+		WHERE id = #{id}
+	</update>
+
 
 </mapper>

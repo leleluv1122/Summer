@@ -3,23 +3,27 @@
              "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="net.lele.mapper.StudentMapper">
-
+	<cache flushInterval="20000" />
 	<select id="findOne" resultType="Student">
-		SELECT * FROM Student WHERE id = #{id}
+		SELECT * FROM Student WHERE id =
+		#{id}
 	</select>
 
 	<select id="findByStudentNumber" resultType="Student">
-		SELECT * FROM Student WHERE studentNumber = #{studentNumber}
+		SELECT * FROM
+		Student WHERE studentNumber = #{studentNumber}
 	</select>
 
 	<select id="findAll" resultType="Student">
-		SELECT s.*, d.departmentName
+		SELECT s.*, d.departmentName, NOW() time
 		FROM Student s LEFT JOIN department d ON s.departmentId = d.id
 	</select>
 
 	<insert id="insert" useGeneratedKeys="true" keyProperty="id">
-		INSERT Student (studentNumber, name, departmentId, year)
-		VALUES (#{studentNumber}, #{name}, #{departmentId}, #{year})
+		INSERT
+		Student (studentNumber, name, departmentId, year)
+		VALUES
+		(#{studentNumber}, #{name}, #{departmentId}, #{year})
 	</insert>
 
 	<update id="update">
@@ -28,7 +32,8 @@
 		name = #{name},
 		departmentId = #{departmentId},
 		year = #{year}
-		WHERE id = #{id}
+		WHERE id =
+		#{id}
 	</update>
 
 	<delete id="delete">
