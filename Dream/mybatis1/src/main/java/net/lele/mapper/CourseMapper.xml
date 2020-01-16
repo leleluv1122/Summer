@@ -5,40 +5,38 @@
 
 <mapper namespace="net.lele.mapper.CourseMapper">
 
-	<select id="findOne" resultMap="resultMap_Course">
+	<select id="findAll" resultMap="resultMap_Course1">
 		SELECT c.*, d.departmentName, p.professorName
 		FROM Course c
-		LEFT JOIN department d
-		ON c.departmentId = d.id
-		LEFT JOIN professor p
-		ON c.professorId = p.id;
-		WHERE id = #{id}
+		JOIN Department d ON c.departmentId = d.id
+		JOIN Professor p ON c.professorId = p.id
 	</select>
 
-	<select id="findAll" resultMap="resultMap_Course">
-		SELECT c.*, d.departmentName, p.professorName
+	<select id="findAllWithStudents" resultMap="resultMap_Course2">
+		SELECT c.*, d.departmentName, p.professorName,
+		s.id studentId, s.studentNumber, s.name
 		FROM Course c
-		LEFT JOIN department d
-		ON c.departmentId = d.id
-		LEFT JOIN professor p
-		ON c.professorId = p.id;
+		JOIN Department d ON c.departmentId = d.id
+		JOIN Professor p ON c.professorId = p.id
+		JOIN Register r ON c.id = r.courseId
+		JOIN Student s ON r.studentId = s.id
 	</select>
 
-	<resultMap id="resultMap_Course" type="Course">
+	<resultMap id="resultMap_Course1" type="Course">
 		<id property="id" column="id" />
 		<result property="courseName" column="courseName" />
-		<result property="departmentId" column="departmentId" />
 		<result property="unit" column="unit" />
-		<result property="professorId" column="professorId" />
 		<result property="startDate" column="startDate" />
+		<result property="professorId" column="professorId" />
+		<result property="departmentId" column="departmentId" />
 		<association property="department" javaType="Department">
 			<id property="id" column="departmentId" />
 			<result property="departmentName" column="departmentName" />
 		</association>
-		<collection property="professor" ofType="Professor">
-			<id property="id" column="professorid" />
+		<association property="professor" javaType="Professor">
+			<id property="id" column="professorId" />
 			<result property="professorName" column="professorName" />
-		</collection>
+		</association>
 	</resultMap>
 
 	<resultMap id="resultMap_Course2" type="Course"
@@ -56,7 +54,10 @@
 			autoMapping="true">
 			<id property="id" column="studentId" />
 		</collection>
-	</resultMap>  
+	</resultMap>
+
+</mapper>
+
 	
 
 	<!-- <select id="findOne" resultMap="resultMap_Course">
@@ -82,5 +83,3 @@
 			<result property="departmentName" column="departmentName" />
 		</association>
 	</resultMap> -->
-
-</mapper>

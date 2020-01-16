@@ -8,7 +8,6 @@ import net.lele.dto.Course;
 
 @Mapper
 public interface CourseMapper {
-	Course findOne(int id);
 	List<Course> findAll();
     List<Course> findAllWithStudents();
 
