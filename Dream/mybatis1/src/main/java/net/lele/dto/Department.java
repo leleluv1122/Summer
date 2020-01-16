@@ -2,6 +2,7 @@ package net.lele.dto;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 public class Department implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -9,6 +10,8 @@ public class Department implements Serializable {
     int id;
     String departmentName;
     Date time;
+    List<Student> students;
+
 
     public int getId() {
         return id;
@@ -33,5 +36,14 @@ public class Department implements Serializable {
     public void setTime(Date time) {
         this.time = time;
     }
+
+    public List<Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(List<Student> students) {
+        this.students = students;
+    }
+
 
 }

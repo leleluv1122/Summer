@@ -14,9 +14,15 @@
 		Student WHERE studentNumber = #{studentNumber}
 	</select>
 
+	<select id="findByDepartmentId" resultType="Student">
+		SELECT * FROM Student WHERE departmentId = #{departmentId}
+	</select>
+
 	<select id="findAll" resultType="Student">
-		SELECT s.*, d.departmentName, NOW() time
-		FROM Student s LEFT JOIN department d ON s.departmentId = d.id
+		SELECT s.*, d.departmentName,
+		NOW() time
+		FROM Student s LEFT JOIN department d ON s.departmentId =
+		d.id
 	</select>
 
 	<insert id="insert" useGeneratedKeys="true" keyProperty="id">

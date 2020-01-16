@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import net.lele.dto.Department;
+import net.lele.dto.Student;
 import net.lele.mapper.DepartmentMapper;
 import net.lele.mapper.StudentMapper;
 
@@ -35,4 +36,23 @@ public class MybatisController {
 		departmentMapper.update(department);
 		return "redirect:cacheTest";
 	}
+
+	@RequestMapping("departmentList1")
+	public String departmentList1(Model model) {
+		List<Department> departments = departmentMapper.findAll();
+		for (Department department : departments) {
+			List<Student> students = studentMapper.findByDepartmentId(department.getId());
+			department.setStudents(students);
+		}
+		model.addAttribute("departments", departments);
+		return "mybatis/departmentList";
+	}
+
+    @RequestMapping("departmentList2")
+    public String departmentList2(Model model) {
+        model.addAttribute("departments", departmentMapper.findAllWithStudents());
+        return "mybatis/departmentList";
+    }
+
+
 }
