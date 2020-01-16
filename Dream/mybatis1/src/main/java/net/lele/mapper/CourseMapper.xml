@@ -7,21 +7,21 @@
 
 	<select id="findOne" resultMap="resultMap_Course">
 		SELECT c.*, d.departmentName, p.professorName
-		FROM Course c 
-			LEFT JOIN department d 
-				ON c.departmentId = d.id
-            LEFT JOIN professor p
-				ON c.professorId = p.id;
+		FROM Course c
+		LEFT JOIN department d
+		ON c.departmentId = d.id
+		LEFT JOIN professor p
+		ON c.professorId = p.id;
 		WHERE id = #{id}
 	</select>
 
 	<select id="findAll" resultMap="resultMap_Course">
 		SELECT c.*, d.departmentName, p.professorName
-		FROM Course c 
-			LEFT JOIN department d 
-				ON c.departmentId = d.id
-            LEFT JOIN professor p
-				ON c.professorId = p.id;
+		FROM Course c
+		LEFT JOIN department d
+		ON c.departmentId = d.id
+		LEFT JOIN professor p
+		ON c.professorId = p.id;
 	</select>
 
 	<resultMap id="resultMap_Course" type="Course">
@@ -36,11 +36,28 @@
 			<result property="departmentName" column="departmentName" />
 		</association>
 		<collection property="professor" ofType="Professor">
-			<id property="id" column="id" />
+			<id property="id" column="professorid" />
 			<result property="professorName" column="professorName" />
-			<result property="dpartmentId" column="dpartmentId" />
 		</collection>
 	</resultMap>
+
+	<resultMap id="resultMap_Course2" type="Course"
+		autoMapping="true">
+		<id property="id" column="id" />
+		<association property="department" javaType="Department"
+			autoMapping="true">
+			<id property="id" column="departmentId" />
+		</association>
+		<association property="professor" javaType="Professor"
+			autoMapping="true">
+			<id property="id" column="professorId" />
+		</association>
+		<collection property="students" ofType="Student"
+			autoMapping="true">
+			<id property="id" column="studentId" />
+		</collection>
+	</resultMap>  
+	
 
 	<!-- <select id="findOne" resultMap="resultMap_Course">
 		SELECT c.*, d.departmentName

@@ -13,7 +13,8 @@ import net.lele.mapper.CourseMapper;
 @Controller
 @RequestMapping("/course")
 public class CourseController {
-	@Autowired CourseMapper courseMapper;
+
+    @Autowired CourseMapper courseMapper;
 
     @RequestMapping("list")
     public String list(Model model) {
@@ -21,4 +22,12 @@ public class CourseController {
         model.addAttribute("courses", courses);
         return "course/list";
     }
+
+    @RequestMapping("list2")
+    public String list2(Model model) {
+        List<Course> courses = courseMapper.findAllWithStudents();
+        model.addAttribute("courses", courses);
+        return "course/list2";
+    }
+
 }

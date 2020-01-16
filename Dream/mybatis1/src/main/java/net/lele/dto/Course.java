@@ -1,6 +1,7 @@
 package net.lele.dto;
 
 import java.util.Date;
+import java.util.List;
 
 public class Course {
 
@@ -12,6 +13,8 @@ public class Course {
     Date startDate;
     Department department;
     Professor professor;
+    List<Student> students;
+
 
     public int getId() {
         return id;
@@ -76,4 +79,13 @@ public class Course {
     public void setProfessor(Professor professor) {
         this.professor = professor;
     }
+
+    public List<Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(List<Student> students) {
+        this.students = students;
+    }
+
 }

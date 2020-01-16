@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <c:url var="R" value="/" />
 <!DOCTYPE html>
 <html>
@@ -18,19 +19,18 @@
 </head>
 <body>
 	<div class="container">
-		<h1>과목목록</h1>
+		<h1>강좌목록</h1>
 		<table class="table table-bordered mt5">
 			<thead>
 				<tr>
 					<th>id</th>
-					<th>과목이름</th>
-					<th>학과id</th>
-					<th>unit</th>
-					<th>교수id</th>
-					<th>시작날짜</th>
-					<th>학과id</th>
-					<th>학과명</th>
-					<th>교수이름</th>
+					<th>강좌명</th>
+					<th>학점</th>
+					<th>시작일</th>
+					<th>담당교수</th>
+					<th>담당교수</th>
+					<th>개설학과</th>
+					<th>개설학과</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -38,13 +38,21 @@
 					<tr>
 						<td>${ course.id }</td>
 						<td>${ course.courseName }</td>
-						<td>${ course.departmentId }</td>
 						<td>${ course.unit }</td>
-						<td>${ course.professorId }</td>
-						<td>${ course.startDate }</td>
+						<td><fmt:formatDate pattern="yyyy-MM-dd"
+								value="${ course.startDate }" /></td>
+						<td>${ course.professor.id }</td>
+						<td>${ course.professor.professorName }</td>
 						<td>${ course.department.id }</td>
 						<td>${ course.department.departmentName }</td>
-						<td>${ course.professor.professorName }</td>
+					</tr>
+					<tr>
+						<td>수강생</td>
+						<td colspan="7" style="color: gray;">
+						<c:forEach var="student" items="${ course.students }">
+             				 ${ student.name }
+            			</c:forEach>
+            			</td>
 					</tr>
 				</c:forEach>
 			</tbody>

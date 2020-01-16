@@ -10,4 +10,6 @@ import net.lele.dto.Course;
 public interface CourseMapper {
 	Course findOne(int id);
 	List<Course> findAll();
+    List<Course> findAllWithStudents();
+
 }
