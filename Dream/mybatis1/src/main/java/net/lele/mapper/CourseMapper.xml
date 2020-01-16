@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+             "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="net.lele.mapper.CourseMapper">
+
+	<select id="findOne" resultMap="resultMap_Course">
+		SELECT c.*, d.departmentName, p.professorName
+		FROM Course c 
+			LEFT JOIN department d 
+				ON c.departmentId = d.id
+            LEFT JOIN professor p
+				ON c.professorId = p.id;
+		WHERE id = #{id}
+	</select>
+
+	<select id="findAll" resultMap="resultMap_Course">
+		SELECT c.*, d.departmentName, p.professorName
+		FROM Course c 
+			LEFT JOIN department d 
+				ON c.departmentId = d.id
+            LEFT JOIN professor p
+				ON c.professorId = p.id;
+	</select>
+
+	<resultMap id="resultMap_Course" type="Course">
+		<id property="id" column="id" />
+		<result property="courseName" column="courseName" />
+		<result property="departmentId" column="departmentId" />
+		<result property="unit" column="unit" />
+		<result property="professorId" column="professorId" />
+		<result property="startDate" column="startDate" />
+		<association property="department" javaType="Department">
+			<id property="id" column="departmentId" />
+			<result property="departmentName" column="departmentName" />
+		</association>
+		<collection property="professor" ofType="Professor">
+			<id property="id" column="id" />
+			<result property="professorName" column="professorName" />
+			<result property="dpartmentId" column="dpartmentId" />
+		</collection>
+	</resultMap>
+
+	<!-- <select id="findOne" resultMap="resultMap_Course">
+		SELECT c.*, d.departmentName
+		FROM Course c LEFT JOIN department d ON c.departmentId = d.id
+		WHERE id = #{id}
+	</select>
+
+	<select id="findAll" resultMap="resultMap_Course">
+		SELECT c.*, d.departmentName
+		FROM Course c LEFT JOIN department d ON c.departmentId = d.id
+	</select>
+
+	<resultMap id="resultMap_Course" type="Course">
+		<id property="id" column="id" />
+		<result property="courseName" column="courseName" />
+		<result property="departmentId" column="departmentId" />
+		<result property="unit" column="unit" />
+		<result property="professorId" column="professorId" />
+		<result property="startDate" column="startDate" />
+		<association property="department" javaType="Department">
+			<id property="id" column="departmentId" />
+			<result property="departmentName" column="departmentName" />
+		</association>
+	</resultMap> -->
+
+</mapper>
