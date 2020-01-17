@@ -41,19 +41,10 @@
           <td>${ course.department.id }</td>
           <td>${ course.department.departmentName }</td>
         </tr>
-        <tr>
-          <td>수강생</td>
-          <td colspan="7" style="color: gray;">
-          
-            <c:forEach var="student" items="${ course.students }">
-              ${ student.name }
-            </c:forEach>          
-          
-          </td>
-        </tr>
       </c:forEach>
     </tbody>
   </table>
 </div>
 </body>
 </html>
+

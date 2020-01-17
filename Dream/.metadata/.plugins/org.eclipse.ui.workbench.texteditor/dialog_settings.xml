@@ -6,8 +6,10 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;"/>
+		<item key="selection" value="/*"/>
 		<list key="findhistory">
+			<item value="/*"/>
+			<item value="@RequestMapping(&quot;list&quot;)"/>
 			<item value="&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;"/>
 			<item value="&lt;!DOCTYPE html&gt;"/>
 			<item value="&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=utf-8&quot; pageEncoding=&quot;utf-8&quot;%&gt;"/>
