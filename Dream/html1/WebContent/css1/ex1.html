@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+	label:first-child { display: inline-block; width: 130px; text-align: right; }
+	label:not(:first-child) { display: inline-block; margin-right: 20px;  }
+	div {margin:10px;}
+	div.a[type=password] { margin-left:3px; }
+	input[type=submit] { margin-left: 50px; width: 70px; }
+	
+</style>
+</head>
+<body>
+	<h1>비밀번호 변경 페이지</h1>
+	<div class="a">
+		<div>
+			<label>현재 비밀번호:</label>
+			<input type="password" name="1" />
+		</div>
+		<div>
+			<label>새로운 비밀번호:</label>
+			<input type="password" name="new1" />
+		</div>
+		<div>
+			<label>새로운 비밀번호2:</label>
+			<input type="password" name="new2" />
+		</div>
+		<div>
+			<button type="submit">저장</button>
+		</div>
+	</div>
+
+</body>
+</html>
