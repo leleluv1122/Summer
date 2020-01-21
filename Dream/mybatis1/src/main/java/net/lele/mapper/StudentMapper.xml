@@ -5,8 +5,7 @@
 <mapper namespace="net.lele.mapper.StudentMapper">
 	<cache flushInterval="20000" />
 	<select id="findOne" resultType="Student">
-		SELECT * FROM Student WHERE id =
-		#{id}
+		SELECT * FROM Student WHERE id = #{id}
 	</select>
 
 	<select id="findByStudentNumber" resultType="Student">
@@ -38,8 +37,7 @@
 		name = #{name},
 		departmentId = #{departmentId},
 		year = #{year}
-		WHERE id =
-		#{id}
+		WHERE id = #{id}
 	</update>
 
 	<delete id="delete">

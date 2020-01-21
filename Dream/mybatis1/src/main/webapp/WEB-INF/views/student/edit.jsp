@@ -42,13 +42,10 @@
 			<hr />
 			<div>
 				<button type="submit" class="btn btn-primary">
-					<span class="glyphicon glyphicon-ok"></span> 저장
-				</button>
+					<span class="glyphicon glyphicon-ok"></span> 저장 </button>
 				<c:if test="${ student.id > 0 }">
-					<a href="delete?id=${ student.id }" class="btn btn-danger"
-						data-confirm-delete> <i class="glyphicon glyphicon-remove"></i>
-						삭제
-					</a>
+					<a href="delete?id=${ student.id }" class="btn btn-danger" data-confirm-delete> 
+						<i class="glyphicon glyphicon-remove"></i>삭제</a>
 				</c:if>
 				<a href="list" class="btn btn-info">목록으로</a>
 			</div>

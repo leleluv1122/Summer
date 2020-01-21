@@ -24,6 +24,7 @@
 				class="glyphicon glyphicon-user"></span> 학생등록
 			</a>
 		</div>
+		<hr />
 		<table class="table table-bordered mt5">
 			<thead>
 				<tr>
