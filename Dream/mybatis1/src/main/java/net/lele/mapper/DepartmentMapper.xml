@@ -33,8 +33,7 @@
 
 	<update id="update">
 		UPDATE Department
-		SET departmentName =
-		#{departmentName}
+		SET departmentName = #{departmentName}
 		WHERE id = #{id}
 	</update>
 
