@@ -6,8 +6,9 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="/*"/>
+		<item key="selection" value="&#x0D;&#x0A;&#x0D;&#x0A;    @RequestMapping(value=&quot;/form1/edit3&quot;, method=RequestMethod.POST)&#x0D;&#x0A;    public String edit3(Model model, Data data) {&#x0D;&#x0A;        System.out.printf(&quot;제목: %s. 색: %d\n&quot;, data.getTitle(), data.getColor());&#x0D;&#x0A;        return &quot;edit3&quot;;&#x0D;&#x0A;    }&#x0D;&#x0A;"/>
 		<list key="findhistory">
+			<item value="&#x0D;&#x0A;&#x0D;&#x0A;    @RequestMapping(value=&quot;/form1/edit3&quot;, method=RequestMethod.POST)&#x0D;&#x0A;    public String edit3(Model model, Data data) {&#x0D;&#x0A;        System.out.printf(&quot;제목: %s. 색: %d\n&quot;, data.getTitle(), data.getColor());&#x0D;&#x0A;        return &quot;edit3&quot;;&#x0D;&#x0A;    }&#x0D;&#x0A;"/>
 			<item value="/*"/>
 			<item value="@RequestMapping(&quot;list&quot;)"/>
 			<item value="&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;"/>

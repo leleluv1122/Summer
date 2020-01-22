@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+             "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="net.lele.mapper.InfoMapper">
+
+  <cache flushInterval="1000" />
+
+  <select id="findOne" resultType="Info">
+  	SELECT * FROM Info WHERE id = #{id}
+  </select>
+
+  <select id="findAll" resultType="Info">
+  	SELECT * FROM Info
+  </select>
+  
+  <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+  	INSERT Info (id, name, password, email, sex, birth, phone)
+  	VALUES (#{id}, #{name}, #{password}, #{email}, #{sex}, #{birth}, #{phone})
+  </insert>
+  
+  <update id="update">
+  	UPDATE Info SET
+  	  password = #{password}
+  	  email = #{email}
+  	WHERE id=#{id}
+  </update>
+  
+  <!-- <delete id="delete">
+  	DELETE FROM Info WHERE (id=#{id}) AND (password=#{password})
+  </delete> -->
+  
+</mapper>
