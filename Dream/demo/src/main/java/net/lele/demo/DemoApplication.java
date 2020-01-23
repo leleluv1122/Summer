@@ -10,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-@MapperScan(value={"net.lele.demo.board.mapper"})
+@MapperScan(value={"net.lele.demo.board.mapper"}) //mapper인터페이스를 인식할 수 있도록 설정
 public class DemoApplication {
 
     public static void main(String[] args) {

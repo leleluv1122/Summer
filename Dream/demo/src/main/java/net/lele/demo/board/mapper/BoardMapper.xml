@@ -2,12 +2,52 @@
 <!DOCTYPE mapper 
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
- 
+
 <mapper namespace="net.lele.demo.board.mapper.BoardMapper">
- 
-    <select id="boardCount" resultType="int">
-        SELECT
-            COUNT(*)
-        FROM BOARD
-    </select>
+
+	<select id="boardCount" resultType="int">
+		SELECT
+		COUNT(*)
+		FROM BOARD
+	</select>
+
+	<select id="boardList"
+		resultType="net.lele.demo.board.domain.BoardVO">
+		SELECT
+		*
+		FROM BOARD
+	</select>
+
+	<select id="boardDetail" parameterType="int"
+		resultType="net.lele.demo.board.domain.BoardVO">
+		SELECT
+		*
+		FROM BOARD
+		WHERE
+		BNO = #{bno}
+	</select>
+
+	<insert id="boardInsert"
+		parameterType="net.lele.demo.board.domain.BoardVO">
+		INSERT BOARD (BNO, SUBJECT,CONTENT,WRITER,REG_DATE)
+		VALUES(#{bno},#{subject},#{content},#{writer},now())
+	</insert>
+
+	<update id="boardUpdate"
+		parameterType="net.lele.demo.board.domain.BoardVO">
+		UPDATE BOARD
+		SET
+		<if test="subject != null">
+			SUBJECT = #{subject}
+		</if>
+		<if test="subject != null and content != null"> , </if>
+		<if test="content != null">
+			CONTENT = #{content}
+		</if>
+		WHERE BNO = #{bno}
+	</update>
+
+	<delete id="boardDelete" parameterType="int">
+		DELETE FROM BOARD WHERE BNO = #{bno}
+	</delete>
 </mapper>
