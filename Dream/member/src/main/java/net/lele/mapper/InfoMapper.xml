@@ -6,8 +6,8 @@
 
   <cache flushInterval="1000" />
 
-  <select id="findOne" resultType="Info">
-  	SELECT * FROM Info WHERE id = #{id}
+  <select id="findOne" resultType="int">
+  	SELECT * FROM Info WHERE id = #{id} AND password = #{password}
   </select>
 
   <select id="findAll" resultType="Info">
@@ -15,8 +15,8 @@
   </select>
   
   <insert id="insert" useGeneratedKeys="true" keyProperty="id">
-  	INSERT Info (id, name, password, email, sex, birth, phone)
-  	VALUES (#{id}, #{name}, #{password}, #{email}, #{sex}, #{birth}, #{phone})
+  	INSERT Info (id, name, password, email, sex, phone)
+  	VALUES (#{id}, #{name}, #{password}, #{email}, #{sex}, #{phone})
   </insert>
   
   <update id="update">

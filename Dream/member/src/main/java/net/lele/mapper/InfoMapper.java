@@ -8,7 +8,7 @@ import net.lele.dto.Info;
 
 @Mapper
 public interface InfoMapper {
-	Info findOne(String id);
+	Info findOne(String id, String password);
 	List<Info> findAll();
 	void insert(Info info);
 	void update(Info info);

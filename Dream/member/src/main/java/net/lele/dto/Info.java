@@ -1,7 +1,6 @@
 package net.lele.dto;
 
 import java.io.Serializable;
-import java.util.Date;
 
 public class Info implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -11,7 +10,6 @@ public class Info implements Serializable {
 	String password;
 	String email;
 	String sex;
-	Date birth;
 	String phone;
 
 	public String getId() {
@@ -52,14 +50,6 @@ public class Info implements Serializable {
 
 	public void setSex(String sex) {
 		this.sex = sex;
-	}
-
-	public Date getBirth() {
-		return birth;
-	}
-
-	public void setBirth(Date birth) {
-		this.birth = birth;
 	}
 
 	public String getPhone() {

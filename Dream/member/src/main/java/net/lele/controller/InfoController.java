@@ -38,8 +38,8 @@ public class InfoController {
     }
 
 	@RequestMapping(value="edit", method=RequestMethod.GET)
-    public String edit(Model model, @RequestParam("id") String id) {
-        Info info = infoMapper.findOne(id);
+    public String edit(Model model, @RequestParam("id") String id, @RequestParam("password") String password) {
+        Info info = infoMapper.findOne(id, password);
         model.addAttribute("info", info);
         return "info/edit";
     }
@@ -49,5 +49,17 @@ public class InfoController {
         infoMapper.update(info);
         return "redirect:list";
     }
+
+    @RequestMapping(value="login", method=RequestMethod.GET)
+	public String login(Model model, @RequestParam("id") String id, @RequestParam("password") String password) {
+        Info info = infoMapper.findOne(id, password);
+		model.addAttribute("info", info);
+		return "info/login";
+	}
+	@RequestMapping(value="login", method=RequestMethod.POST)
+    public String login(Model model, Info info) {
+        return "redirect:list";
+    }
+
 
 }

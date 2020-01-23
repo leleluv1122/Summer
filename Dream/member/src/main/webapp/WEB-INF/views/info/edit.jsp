@@ -20,7 +20,7 @@
 </head>
 <body>
 	<div class="container">
-		<h1>회원가입</h1>
+		<h1>회원 ${ Info.id > 0 ? "수정" : "가입" }</h1>
 		<hr />
 		<form:form method="post" modelAttribute="info">
 			<div class="form-group">
@@ -29,7 +29,8 @@
 			</div>
 			<div class="form-group">
 				<label>비밀번호:</label>
-				<form:input path="password" type="password" class="form-control w200" />
+				<form:input path="password" type="password"
+					class="form-control w200" />
 			</div>
 			<div class="form-group">
 				<label>이름:</label>
@@ -40,11 +41,7 @@
 				<form:input path="email" class="form-control w200" />
 			</div>
 			<div class="form-group">
-				<label>생일:</label>
-				<form:input path="birth" class="form-control w200" />
-			</div>
-			<div class="form-group">
-				<label>휴대폰 번호:</label>
+				<label>휴대전화:</label>
 				<form:input path="phone" class="form-control w200" />
 			</div>
 			<div class="form-group">
@@ -59,7 +56,7 @@
 				<button type="submit" class="btn btn-primary">
 					<span class="glyphicon glyphicon-ok"></span> 저장
 				</button>
-				
+
 				<a href="list" class="btn btn-info">목록으로</a>
 			</div>
 		</form:form>

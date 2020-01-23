@@ -27,7 +27,6 @@
         <th>이름</th>
         <th>이메일</th>
         <th>성별</th>
-        <th>생일</th>
         <th>휴대폰 번호</th>
       </tr>
     </thead>
@@ -37,8 +36,8 @@
           <td>${ info.id }</td>
           <td>${ info.name }</td>
           <td>${ info.email }</td>
-          <td>${ info.sex }</td>
-          <td><fmt:formatDate pattern = "yyyy-MM-dd" value="${ info.birth }" /></td>
+          <td>${ info.sex }</td><%-- 
+          <td><fmt:formatDate pattern = "yyyy-MM-dd" value="${ info.birth }" /></td> --%>
           <td>${ info.phone }</td>
         </tr>
       </c:forEach>
