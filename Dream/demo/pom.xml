@@ -66,7 +66,7 @@
 		<!-- <dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.6</version>
+			<version>6.0.6</version>
 		</dependency> -->
 		<dependency>
 			<groupId>mysql</groupId>
@@ -91,7 +91,7 @@
 		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis</artifactId>
-			<version>3.4.2</version>
+			<version>3.4.5</version>
 		</dependency>
 
 		<!-- JSTL -->
@@ -100,6 +100,19 @@
                <artifactId>jstl</artifactId>
                <version>1.2</version>
           </dependency>
+          
+          <!--Multipart File Up&Download -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.0</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.5</version>
+        </dependency>
 		
 	</dependencies>
 

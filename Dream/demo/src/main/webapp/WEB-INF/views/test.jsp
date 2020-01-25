@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="layoutTag" tagdir="/WEB-INF/tags"%>
+<layoutTag:layout>
+	<!DOCTYPE html>
+	<html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -9,8 +11,6 @@
 <body>
 
 	<h2>테스트</h2>
-
-
-<%@ include file="bootstrap.jsp" %>
 </body>
-</html>
+	</html>
+</layoutTag:layout>

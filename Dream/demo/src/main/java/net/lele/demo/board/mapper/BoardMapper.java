@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import net.lele.demo.board.domain.BoardVO;
+import net.lele.demo.board.domain.FileVO;
 
 @Repository("net.lele.demo.board.mapper.BoardMapper")
 public interface BoardMapper {
@@ -25,4 +26,9 @@ public interface BoardMapper {
 
 	// 게시글 삭제
 	public int boardDelete(int bno) throws Exception;
+
+	public int fileInsert(FileVO file) throws Exception;
+
+	//파일 상세
+	public FileVO fileDetail(int bno) throws Exception;
 }

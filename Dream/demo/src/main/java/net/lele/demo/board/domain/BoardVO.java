@@ -1,6 +1,6 @@
 package net.lele.demo.board.domain;
 
-import java.util.Date;
+import java.sql.Timestamp;
 
 public class BoardVO {
 
@@ -8,7 +8,7 @@ public class BoardVO {
     private String subject;
     private String content;
     private String writer;
-    private Date created_date;
+    private Timestamp created_date;
 
 	public int getBno() {
 		return bno;
@@ -28,10 +28,10 @@ public class BoardVO {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public Date getCreated_date() {
+	public Timestamp getCreated_date() {
 		return created_date;
 	}
-	public void setCreated_date(Date created_date) {
+	public void setCreated_date(Timestamp created_date) {
 		this.created_date = created_date;
 	}
 	public String getWriter() {
