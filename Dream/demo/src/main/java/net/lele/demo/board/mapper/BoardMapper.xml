@@ -27,8 +27,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     
     <insert id="boardInsert" parameterType="net.lele.demo.board.domain.BoardVO">
         INSERT INTO
-        BOARD (BNO, SUBJECT,CONTENT,WRITER,REG_DATE)
-        VALUES(#{bno},#{subject},#{content},#{writer},now()) 
+        BOARD (BNO, SUBJECT,CONTENT,WRITER,CREATED_DATE)
+        VALUES(#{bno},#{subject},#{content},#{writer},DATE_FORMAT(now(), '%Y-%m-%d %H:%i:%s')) 
     </insert>
     
     <update id="boardUpdate" parameterType="net.lele.demo.board.domain.BoardVO">

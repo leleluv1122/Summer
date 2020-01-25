@@ -24,7 +24,7 @@
 			</div>
 			<div class="form-group">
 				<label>작성날짜</label>
-				<p>${detail.reg_date}</p>
+				<p>${detail.created_date}</p>
 			</div>
 			<div class="form-group">
 				<label>내용</label>

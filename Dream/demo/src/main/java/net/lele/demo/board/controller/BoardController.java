@@ -21,7 +21,7 @@ public class BoardController {
     private String boardList(Model model) throws Exception{
 
         model.addAttribute("list", mBoardService.boardListService());
-
+        //list에 service를 넣어줌???????????????????????????
         return "list";
     }
 

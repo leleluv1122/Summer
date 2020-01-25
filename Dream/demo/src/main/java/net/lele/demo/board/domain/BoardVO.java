@@ -8,7 +8,7 @@ public class BoardVO {
     private String subject;
     private String content;
     private String writer;
-    private Date reg_date;
+    private Date created_date;
 
 	public int getBno() {
 		return bno;
@@ -28,17 +28,18 @@ public class BoardVO {
 	public void setContent(String content) {
 		this.content = content;
 	}
+	public Date getCreated_date() {
+		return created_date;
+	}
+	public void setCreated_date(Date created_date) {
+		this.created_date = created_date;
+	}
 	public String getWriter() {
 		return writer;
 	}
 	public void setWriter(String writer) {
 		this.writer = writer;
 	}
-	public Date getReg_date() {
-		return reg_date;
-	}
-	public void setReg_date(Date reg_date) {
-		this.reg_date = reg_date;
-	}
+
 
 }
