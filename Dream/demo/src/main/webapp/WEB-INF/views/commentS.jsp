@@ -26,8 +26,7 @@
 										function(key, value) {
 											a += '<div class="commentArea" style="border-bottom:1px solid darkgray; margin-bottom: 15px;">';
 											a += '<div class="commentInfo'+value.cno+'">'
-													+ '작성자 : '
-													+ value.writer;
+													+ '작성자 : ' + value.writer;
 											a += '<a onclick="commentUpdate('
 													+ value.cno + ',\''
 													+ value.content

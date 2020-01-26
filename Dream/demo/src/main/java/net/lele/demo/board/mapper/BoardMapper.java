@@ -2,6 +2,7 @@ package net.lele.demo.board.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import net.lele.demo.board.domain.BoardVO;
@@ -13,7 +14,7 @@ public interface BoardMapper {
 	public int boardCount() throws Exception;
 
 	// 게시글 목록
-	public List<BoardVO> boardList() throws Exception;
+	public List<BoardVO> boardList(@Param("order") String order) throws Exception;
 
 	// 게시글 상세
 	public BoardVO boardDetail(int bno) throws Exception;

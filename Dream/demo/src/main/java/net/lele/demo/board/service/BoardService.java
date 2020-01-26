@@ -18,7 +18,7 @@ public class BoardService {
 
     public List<BoardVO> boardListService() throws Exception{
 
-        return mBoardMapper.boardList();
+        return mBoardMapper.boardList("bno DESC");
     }
 
     public BoardVO boardDetailService(int bno) throws Exception{

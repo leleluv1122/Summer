@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper 
-PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
 <mapper namespace="net.lele.demo.board.mapper.BoardMapper">
@@ -11,11 +10,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		FROM BOARD
 	</select>
 
-	<select id="boardList"
-		resultType="net.lele.demo.board.domain.BoardVO">
-		SELECT
-		*
-		FROM BOARD
+	<select id="boardList" resultType="net.lele.demo.board.domain.BoardVO">
+		SELECT * FROM BOARD
+		ORDER BY ${order}
 	</select>
 
 	<select id="boardDetail" parameterType="int"

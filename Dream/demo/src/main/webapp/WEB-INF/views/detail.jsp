@@ -57,7 +57,7 @@
 						placeholder="내용을 입력하세요."> <span class="input-group-btn">
 					
 					<input type="text" class="form-control" id="writer" name="writer"
-					 placeholder="작성자" />
+					 placeholder="작성자"/>
 						<button class="btn btn-default" type="button"
 							name="commentInsertBtn">등록</button>
 					</span>
