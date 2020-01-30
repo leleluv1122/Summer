@@ -6,8 +6,9 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="appServlet"/>
+		<item key="selection" value="springframework"/>
 		<list key="findhistory">
+			<item value="springframework"/>
 			<item value="appServlet"/>
 			<item value="spring-jdbc"/>
 			<item value="&#x0D;&#x0A;        &lt;th&gt;생일&lt;/th&gt;"/>
