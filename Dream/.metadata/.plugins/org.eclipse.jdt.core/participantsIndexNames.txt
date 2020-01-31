@@ -45,6 +45,8 @@ D:\Summer\Dream\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1826680106
 \lecture1\src
 D:\Summer\Dream\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1992835439.index
 \mybatis1\src\main\java
+D:\Summer\Dream\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\606803512.index
+\mvc2\src\main\java
 D:\Summer\Dream\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2792336045.index
 \form0\src\main\java
 D:\Summer\Dream\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3706978016.index

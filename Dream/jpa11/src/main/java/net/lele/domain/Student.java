@@ -39,4 +39,5 @@ public class Student {
 	@JsonIgnore
 	@OneToMany(mappedBy = "student", fetch = FetchType.LAZY)
 	List<Registration> registrations;
+	//registration테이블에서 studentId를 나타낸다..
 }
