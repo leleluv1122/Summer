@@ -35,6 +35,7 @@ public class UserService {
 
 	public void save(UserRegistrationModel userModel) {
 		User user = createEntity(userModel);
+		//usermodel 모델 객체로부터 user 엔터티 객체를 생성해 리턴한다
 		userRepository.save(user);
 	}
 
