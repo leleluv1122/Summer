@@ -28,11 +28,11 @@ public class UserController {
 		// user/register.jsp 뷰 파일을 실행할 때 학고ㅏ목록이 출력되어야 해서 ..
 		return "user/register";
 	}
-	//회원가입 입력 폼이 처음 실행될 때 GET 방식의 register 액션 메소드가 실행
+	// 회원가입 입력 폼이 처음 실행될 때 GET 방식의 register 액션 메소드가 실행
 
 	@RequestMapping(value = "register", method = RequestMethod.POST)
 	public String register(@Valid UserRegistrationModel userModel, BindingResult bindingResult, Model model) {
-		if (bindingResult.hasErrors()) {
+		if (userService.hasErrors(userModel, bindingResult)) {
 			model.addAttribute("departments", departmentService.findAll());
 			return "user/register";
 		}
@@ -43,7 +43,7 @@ public class UserController {
 		return "redirect:registerSuccess";
 		// 데이터에 오류가 없으면 user테이블에 저장하고 성공화면 리다이렉트
 	}
-	//submit 버튼을 클릭했을 때, POST 방식의 register 액션 메소드가 실행된다.
+	// submit 버튼을 클릭했을 때, POST 방식의 register 액션 메소드가 실행된다.
 
 	@RequestMapping("registerSuccess")
 	public String registerSuccess() {

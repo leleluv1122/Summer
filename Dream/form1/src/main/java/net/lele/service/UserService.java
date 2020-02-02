@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.BindingResult;
 
 import net.lele.domain.Department;
 import net.lele.domain.User;
@@ -18,6 +19,21 @@ public class UserService {
 
 	public List<User> findAll() {
 		return userRepository.findAll();
+	}
+
+	public boolean hasErrors(UserRegistrationModel userModel, BindingResult bindingResult) {
+		if (bindingResult.hasErrors())
+			return true;
+		if (userModel.getPasswd1().equals(userModel.getPasswd2()) == false) {
+			bindingResult.rejectValue("passwd2", null, "비밀번호가 일치하지 않습니다.");
+			return true;
+		}
+		User user = userRepository.findByUserid(userModel.getUserid());
+		if (user != null) {
+			bindingResult.rejectValue("userid", null, "사용자 아이디가 중복됩니다.");
+			return true;
+		}
+		return false;
 	}
 
 	public User createEntity(UserRegistrationModel userModel) {
@@ -35,7 +51,7 @@ public class UserService {
 
 	public void save(UserRegistrationModel userModel) {
 		User user = createEntity(userModel);
-		//usermodel 모델 객체로부터 user 엔터티 객체를 생성해 리턴한다
+		// usermodel 모델 객체로부터 user 엔터티 객체를 생성해 리턴한다
 		userRepository.save(user);
 	}
 

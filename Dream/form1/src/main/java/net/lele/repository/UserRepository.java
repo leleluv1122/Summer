@@ -6,4 +6,6 @@ import net.lele.domain.User;
 
 public interface UserRepository extends JpaRepository<User, Integer> {
 
+	User findByUserid(String userid);
+
 }
