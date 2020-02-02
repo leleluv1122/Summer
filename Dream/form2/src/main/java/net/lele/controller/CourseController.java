@@ -36,15 +36,20 @@ public class CourseController {
 	}
 
 	@RequestMapping(value = "list", method = RequestMethod.POST)
-	public String list(Model model, @RequestParam("id") int[] id, @RequestParam("courseName") String[] courseName,
+	public String list(Model model,
+			@RequestParam("id") int[] id,
+			//req param id 데이터가 여러개인경우 배열로 전달
+			@RequestParam("courseName") String[] courseName,
 			@RequestParam("unit") int[] unit,
 			@RequestParam("startDate") @DateTimeFormat(pattern = "yyyy-MM-dd") Date[] startDate,
-			@RequestParam("departmentId") int[] departmentId, @RequestParam("professorId") int[] professorId) {
+			@RequestParam("departmentId") int[] departmentId,
+			@RequestParam("professorId") int[] professorId)
+	{
 		save(id, courseName, unit, startDate, departmentId, professorId);
 		return list(model);
 	}
 
-	@Transactional
+	@Transactional //UPDATE/DELETE/INSERT 등 DB명령은 모두가 성공or실패한다 부분성공or실패는 없다!
 	private void save(int[] id, String[] courseName, int[] unit, Date[] startDate, int[] departmentId,
 			int[] professorId) {
 		for (int i = 0; i < courseName.length; ++i) {

@@ -11,8 +11,7 @@
 	<update id="update">
 		UPDATE course
 		SET courseName = #{courseName},
-		unit =
-		#{unit},
+		unit = #{unit},
 		startDate = #{startDate},
 		departmentId = #{departmentId},
 		professorId = #{professorId}
@@ -23,8 +22,7 @@
 		INSERT
 		course (courseName, unit, startDate, departmentId, professorId)
 		VALUES
-		(#{courseName}, #{unit}, #{startDate}, #{departmentId},
-		#{professorId})
+		(#{courseName}, #{unit}, #{startDate}, #{departmentId}, #{professorId})
 	</insert>
 
 </mapper>
