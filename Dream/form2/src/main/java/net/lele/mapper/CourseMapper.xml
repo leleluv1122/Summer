@@ -10,7 +10,8 @@
 
 	<update id="update">
 		UPDATE course
-		SET courseName = #{courseName},
+		SET 
+		courseName = #{courseName},
 		unit = #{unit},
 		startDate = #{startDate},
 		departmentId = #{departmentId},
