@@ -20,5 +20,4 @@ INDEX VERSION 1.4+D:\Summer\Dream\.metadata\.plugins\org.eclipse.wst.jsdt.core\i
 1297013223.index
 3091138406.index
 3231028230.index
-1075165777.index
 3684839510.index

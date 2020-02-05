@@ -23,7 +23,7 @@ public class ArticleController {
 	@Autowired
 	BoardRepository boardRepository;
 
-	@RequestMapping("list")
+	@RequestMapping("list") //게시글 목록화면을 출력하기 위한 액션 메소드
 	public String list(Pagination pagination, Model model) {
 		Board board = boardRepository.findById(pagination.getBd()).get();
 		List<Article> list = articleRepository.findAll(pagination);
@@ -33,8 +33,9 @@ public class ArticleController {
 		model.addAttribute("searchBy", ArticleRepository.searchBy);
 		return "article/list";
 	}
+	// pagination 객체에 bd등등 값들이 채워져서 넘어간다
 
-	@RequestMapping("view")
+	@RequestMapping("view") //게시글 목록화면에서 게시글 한개를 클릭했을 때 실행되는 액션 메소드 /상세화면
 	public String view(@RequestParam("id") int id, Pagination pagination, Model model) {
 		Article article = articleRepository.findById(id).get();
 		model.addAttribute("article", article);

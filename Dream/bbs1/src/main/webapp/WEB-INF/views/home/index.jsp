@@ -17,8 +17,8 @@
 		<h1>bbs1</h1>
 		<hr />
 
-		<a href="article/list?bd=1" class="btn btn-default">공지사항</a> <a
-			href="article/list?bd=2" class="btn btn-default">자유게시판</a>
+		<a href="article/list?bd=1" class="btn btn-default">공지사항</a> 
+		<a href="article/list?bd=2" class="btn btn-default">자유게시판</a>
 	</div>
 </body>
 </html>
