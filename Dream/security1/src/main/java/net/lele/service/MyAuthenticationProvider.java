@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
 
 import net.lele.domain.User;
 
+// 사용자가 입력한 로그인 아이디와 비밀번호를 검사할 때 사용되는 클래스
 @Component
 public class MyAuthenticationProvider implements AuthenticationProvider {
 
@@ -25,10 +26,12 @@ public class MyAuthenticationProvider implements AuthenticationProvider {
         String passwd = authentication.getCredentials().toString();
         return authenticate(loginId, passwd);
     }
+    // 사용자가 입력한 로그인 아이디와 비밀번호를 검사해야 할 때 자동으로 호출
+    // 사용자가 입력한 로그인 아이디와 비밀번호가 이 메소드의 파라미터로 전달됨
 
     public Authentication authenticate(String loginId, String password) throws AuthenticationException {
         User user = userService.login(loginId, password);
-        if (user == null) return null;
+        if (user == null) return null; //검사가 실패하면 null 리턴
 
         List<GrantedAuthority> grantedAuthorities = new ArrayList<GrantedAuthority>();
         String role = "";
@@ -37,6 +40,8 @@ public class MyAuthenticationProvider implements AuthenticationProvider {
         case "교수": role = "ROLE_PROFESSOR"; break;
         case "학생": role = "ROLE_STUDENT"; break;
         }
+        // User 테이블의 userType 필드의 값은 '관리자', '교수', '학생'
+        // spring security 권한을 ROLE_~~ 로 설정한다
         grantedAuthorities.add(new SimpleGrantedAuthority(role));
         return new MyAuthenticaion(loginId, password, grantedAuthorities, user);
     }

@@ -4,7 +4,7 @@ import java.security.MessageDigest;
 
 public class EncryptionUtils {
 
-	public static String encryptSHA256(String s) {
+	public static String encryptSHA256(String s) { // 이게 더 강력
 		return encrypt(s, "SHA-256");
 	}
 
@@ -14,7 +14,8 @@ public class EncryptionUtils {
 
 	public static String encrypt(String s, String messageDigest) {
 		try {
-			MessageDigest md = MessageDigest.getInstance(messageDigest); //암호화 알고리즘 지정
+			MessageDigest md = MessageDigest.getInstance(messageDigest);
+			//암호화 알고리즘 지정 SHA-256 or MD5 알고리즘 지정가능
 			byte[] passBytes = s.getBytes();
 			md.reset();
 			byte[] digested = md.digest(passBytes);

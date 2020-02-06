@@ -22,4 +22,8 @@ public class UserService {
 			return null;
 		return user;
 	}
+	// 사용자가 입력한 로그인 아이디와 비밀번호를 검사하는 메소드
+	// 검사 결과가 성공이면 User 테이블에서 조회한 User 객체를 리턴한다.
+	// 검사결과가 실패면 null을 리턴한다.
+	// 사용자가 입력한 비밀번호를 암호화하여 비교하고있음
 }
