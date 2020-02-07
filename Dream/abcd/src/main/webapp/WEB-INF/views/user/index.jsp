@@ -20,23 +20,9 @@
 	<div class="container">
 		<h1>메인 페이지 뚜루룽</h1>
 		<hr />
-		<%-- <sec:authorize access="authenticated">
+		<sec:authorize access="authenticated">
 			<a class="btn btn-default" href="${R}user/info">학생정보</a>
-		</sec:authorize> --%>
-		<table class="table table-bordered" style="width: 500px;">
-			<tr>
-				<td>로그인ID</td>
-				<td><sec:authentication property="user.userId" /></td>
-			</tr>
-			<tr>
-				<td>이름</td>
-				<td><sec:authentication property="user.name" /></td>
-			</tr>
-			<tr>
-				<td>이메일</td>
-				<td><sec:authentication property="user.email" /></td>
-			</tr>
-		</table>
+		</sec:authorize>
 
 		<a class="btn btn-default" href="logout_processing">로그아웃</a>
 	</div>

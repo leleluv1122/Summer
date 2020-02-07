@@ -19,10 +19,12 @@ public class User {
 	String userId;
 
 	String password;
-	String name;
-	String email;
 	boolean enabled;
 	String userType;
+	String name;
+	String email;
+	String phone;
+	String address;
 
 	@ManyToOne
 	@JoinColumn(name = "departmentId")

@@ -18,4 +18,8 @@ public class DepartmentService {
 		return departmentRepository.findAll();
 	}
 
+	/*
+	 * public Department findOneByDepartmentId(int id) { return
+	 * departmentRepository.findOneByDepartmentId(id); }
+	 */
 }

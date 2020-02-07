@@ -55,6 +55,16 @@
 				<form:select path="departmentId" class="form-control w200"
 					itemValue="id" itemLabel="name" items="${ departments }" />
 			</div>
+			<div class="form-group">
+				<label>전화번호:</label>
+				<form:input path="phone" class="form-control w300" />
+				<form:errors path="phone" class="error" />
+			</div>
+			<div class="form-group">
+				<label>주소:</label>
+				<form:input path="address" class="form-control w300" />
+				<form:errors path="address" class="error" />
+			</div>
 			<button type="submit" onclick="return confirm('회원가입 하시겠습니까?')"
 				class="btn btn-primary">
 				<i class="glyphicon glyphicon-user"></i> 회원가입

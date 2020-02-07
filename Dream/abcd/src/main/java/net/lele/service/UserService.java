@@ -53,12 +53,14 @@ public class UserService {
 		String pw = EncryptionUtils.encryptMD5(userModel.getPasswd1());
 		user.setUserId(userModel.getUserid());
 		user.setPassword(pw);
-		user.setName(userModel.getName());
-		user.setEmail(userModel.getEmail());
 		user.setDepartment(new Department());
 		user.getDepartment().setId(userModel.getDepartmentId());
 		user.setEnabled(true);
 		user.setUserType("학생");
+		user.setEmail(userModel.getEmail());
+		user.setAddress(userModel.getAddress());
+		user.setName(userModel.getName());
+		user.setPhone(userModel.getPhone());
 		return user;
 	}
 

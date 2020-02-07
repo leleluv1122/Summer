@@ -28,5 +28,11 @@ public class UserRegistrationModel {
 	@Email(message = "이메일 주소가 올바르지 않습니다")
 	String email;
 
+	@NotEmpty(message = "전화번호를 입력하세요")
+	String phone;
+
+	@NotEmpty(message = "주소를 입력하세요")
+	String address;
+
 	Integer departmentId;
 }
