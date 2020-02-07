@@ -24,14 +24,17 @@
 		<sec:authorize access="not authenticated">
 			<a class="btn btn-default" href="${R}guest/login">로그인</a>
 		</sec:authorize>
-		
+
 		<sec:authorize access="not authenticated">
 			<a class="btn btn-default" href="${R}guest/register">회원가입</a>
 		</sec:authorize>
-		
+
 		<sec:authorize access="authenticated">
 			<a class="btn btn-default" href="${R}user/logout_processing">로그아웃</a>
 		</sec:authorize>
+		
+		
+		
 		
 	</div>
 </body>
