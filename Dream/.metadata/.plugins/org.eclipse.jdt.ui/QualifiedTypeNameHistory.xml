@@ -10,7 +10,23 @@
     <fullyQualifiedTypeName name="org.apache.commons.logging.Log"/>
     <fullyQualifiedTypeName name="org.slf4j.LoggerFactory"/>
     <fullyQualifiedTypeName name="org.slf4j.Logger"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.stream.Stream"/>
     <fullyQualifiedTypeName name="net.lele.domain.User"/>
+    <fullyQualifiedTypeName name="lombok.Data"/>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
+    <fullyQualifiedTypeName name="javax.persistence.TemporalType"/>
+    <fullyQualifiedTypeName name="javax.persistence.Temporal"/>
+    <fullyQualifiedTypeName name="org.apache.tomcat.util.buf.StringUtils"/>
+    <fullyQualifiedTypeName name="org.apache.tomcat.util.codec.binary.StringUtils"/>
+    <fullyQualifiedTypeName name="antlr.StringUtils"/>
+    <fullyQualifiedTypeName name="org.dom4j.util.StringUtils"/>
+    <fullyQualifiedTypeName name="org.springframework.util.StringUtils"/>
+    <fullyQualifiedTypeName name="org.springframework.data.jpa.domain.JpaSort.Path"/>
+    <fullyQualifiedTypeName name="org.apache.taglibs.standard.extra.spath.Path"/>
+    <fullyQualifiedTypeName name="javax.validation.Path"/>
+    <fullyQualifiedTypeName name="javax.persistence.criteria.Path"/>
+    <fullyQualifiedTypeName name="java.nio.file.Path"/>
+    <fullyQualifiedTypeName name="net.lele.domain.File"/>
+    <fullyQualifiedTypeName name="javax.persistence.OneToOne"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
 </qualifiedTypeNameHistroy>
