@@ -17,7 +17,10 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <link rel="stylesheet" href="${R}res/common.css">
-<title>학사행정 메인</title>
+<title>개설교과목 조회</title>
+<style>
+	table {table-layout:fixed;word-break:break-all;}
+</style>
 </head>
 <body>
 	<div class="container">
@@ -49,7 +52,47 @@
 					<p>초밥</p>
 					<p>치킨</p>
 				</td>
-				<td>뚜잇뚜잇 날짜랑 일정하기</td>
+				<td>
+					<table id="subject" class="table table-bordered">
+						<colgroup>
+							<col width="8%"/>
+							<col width="8%"/>
+							<col width="15%" />
+							<col width="8%"/>
+							<col width="23%"/>
+							<col width="11%"/>
+							<col width="*"/>
+							<col width="8%"/>
+						</colgroup>
+						<thead>
+							<tr>
+								<th>연도</th>
+								<th>학기</th>
+								<th>학부/과</th>
+								<th>학년</th>
+								<th>교과목명</th>
+								<th>과목코드</th>
+								<th>이수구분</th>
+								<th>학점</th>
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach var="subject" items="${ list }">
+								<tr>
+									<td>${ subject.year }</td>
+									<td>${ subject.term }</td>
+									<td>${ subject.department.name }</td>
+									<td>${ subject.grade }</td>
+									<td>${ subject.name }</td>
+									<td>${ subject.id }</td>
+									<td>${ subject.classs }</td>
+									<td>${ subject.credit }</td>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+
+				</td>
 			</tr>
 		</table>
 

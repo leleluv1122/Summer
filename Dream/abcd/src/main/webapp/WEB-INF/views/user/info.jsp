@@ -15,22 +15,25 @@
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<title>사용자 정보</title>
+<title>학생 정보</title>
 
 <link rel="stylesheet" href="${R}res/common.css">
 </head>
 <body>
 	<div class="container">
 
-		<a class="btn btn-light" style="color: black;  font-size:3em;" href="${R}user/index">학사행정</a>
-		<a class="btn btn-default btn-xs" style="text-align: right"
-			href="logout_processing">로그아웃</a>
+		<a class="btn btn-light" style="color: black; font-size: 3em;"
+			href="${R}user/index">학사행정</a> <a class="btn btn-light btn-xs"
+			style="color: black; float: right;" href="logout_processing">로그아웃</a>
 
 		<hr />
 		<div class="menu">
 			<span><sec:authorize access="authenticated">
 					<a class="btn btn-light" style="color: black" href="${R}user/info">학생정보</a>
-				</sec:authorize></span> <span>개설교과목조회</span>
+				</sec:authorize></span> <span><sec:authorize access="authenticated">
+					<a class="btn btn-light" style="color: black"
+						href="${R}user/subjectlist">개설교과목조회</a>
+				</sec:authorize></span>
 		</div>
 		<table>
 			<tr>

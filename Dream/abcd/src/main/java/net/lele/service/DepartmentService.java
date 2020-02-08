@@ -17,9 +17,4 @@ public class DepartmentService {
 	public List<Department> findAll() {
 		return departmentRepository.findAll();
 	}
-
-	/*
-	 * public Department findOneByDepartmentId(int id) { return
-	 * departmentRepository.findOneByDepartmentId(id); }
-	 */
 }
