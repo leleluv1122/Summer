@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@ taglib tagdir="/WEB-INF/tags" prefix="my"%>
 <%@ taglib uri="http://www.springframework.org/security/tags"
 	prefix="sec"%>
 <c:url var="R" value="/" />
@@ -17,9 +15,8 @@
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+<title>학생 정보</title>
 <link rel="stylesheet" href="${R}res/common.css">
-<title>개설교과목 조회</title>
 <style>
 table {
 	table-layout: fixed;
@@ -38,7 +35,8 @@ table {
 		<div class="menu">
 			<span><sec:authorize access="authenticated">
 					<a class="btn btn-light" style="color: black" href="${R}user/info">학생정보</a>
-				</sec:authorize></span> <span><sec:authorize access="authenticated">
+				</sec:authorize></span> 
+				<span><sec:authorize access="authenticated">
 					<a class="btn btn-light" style="color: black"
 						href="${R}user/subjectlist">개설교과목조회</a>
 				</sec:authorize></span>
@@ -62,61 +60,45 @@ table {
 					<p>치킨</p>
 				</td>
 				<td>
-				<form:form method="get" modelAttribute="pagination"
-						class="form-inline">
-						<form:hidden path="pg" value="1" />
-						<form:hidden path="sz" />
-						<span>학과:</span>
-						<form:select path="di" class="form-control">
-							<form:option value="0">전체</form:option>
-							<form:options itemValue="id" itemLabel="name"
-								items="${ departments }" />
-						</form:select>
-						<button type="submit" class="btn btn-default">검색</button>
-					</form:form>
-
-					<table id="subject" class="table table-bordered">
+					<table id="register" class="table table-bordered">
 						<colgroup>
 							<col width="8%" />
 							<col width="8%" />
-							<col width="15%" />
-							<col width="8%" />
+							<col width="12%" />
 							<col width="23%" />
-							<col width="11%" />
 							<col width="*" />
-							<col width="8%" />
 						</colgroup>
 						<thead>
 							<tr>
 								<th>연도</th>
 								<th>학기</th>
-								<th>학부/과</th>
-								<th>학년</th>
-								<th>교과목명</th>
 								<th>과목코드</th>
+								<th>교과목명</th>
 								<th>이수구분</th>
 								<th>학점</th>
+								<th>등급</th>
+								<th>교수명</th>
 							</tr>
 						</thead>
 						<tbody>
-							<c:forEach var="subject" items="${ list }">
+							<c:forEach var="register" items="${ register }">
 								<tr>
-									<td>${ subject.year }</td>
-									<td>${ subject.term }</td>
-									<td>${ subject.department.name }</td>
-									<td>${ subject.grade }</td>
-									<td>${ subject.name }</td>
-									<td>${ subject.id }</td>
-									<td>${ subject.classs }</td>
-									<td>${ subject.credit }</td>
+									<td>${ register.year }</td>
+									<td>${ register.term }</td>
+									<td>${ register.subject.id }</td>
+									<td>${ register.subject.name }</td>
+									<td>${ register.subject.classs }</td>
+									<td>${ register.subject.credit }</td>
+									<td>${ register.grade }</td>
+									<td>${ register.subject.professor.name }</td>
 								</tr>
 							</c:forEach>
 						</tbody>
-					</table></td>
+					</table>
+				</td>
 			</tr>
 		</table>
-		<my:pagination pageSize="${ pagination.sz }"
-			recordCount="${ pagination.recordCount }" queryStringName="pg" />
+
 
 		<div class="footer">
 			<a href="http://www.hansei.ac.kr"> <img
@@ -125,6 +107,5 @@ table {
 			<div>Copyright (c) Han-Sei Univisity. All rights reserved.</div>
 		</div>
 	</div>
-
 </body>
 </html>

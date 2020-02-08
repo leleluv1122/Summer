@@ -3,6 +3,7 @@ package net.lele.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 
@@ -67,6 +68,11 @@ public class UserService {
 	public void save(UserRegistrationModel userModel) {
 		User user = createEntity(userModel);
 		userRepository.save(user);
+	}
+
+	public int currentId() {
+		User user = (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		return user.getId();
 	}
 
 }

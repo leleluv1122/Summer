@@ -12,5 +12,6 @@ public class Professor {
 	int id;
 
 	String name;
-
+	String email;
+	String location;
 }

@@ -33,6 +33,9 @@
 				</sec:authorize></span> <span><sec:authorize access="authenticated">
 					<a class="btn btn-light" style="color: black"
 						href="${R}user/subjectlist">개설교과목조회</a>
+				</sec:authorize></span> <span><sec:authorize access="authenticated">
+					<a class="btn btn-light" style="color: black"
+						href="${R}user/register">취득성적</a>
 				</sec:authorize></span>
 		</div>
 		<table>
