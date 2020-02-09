@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 import lombok.Data;
+
 @Data
 @Entity
 public class Classs {
@@ -11,5 +12,4 @@ public class Classs {
 	int id;
 
 	String name;
-
 }

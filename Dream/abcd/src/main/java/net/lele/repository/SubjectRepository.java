@@ -15,23 +15,23 @@ public interface SubjectRepository extends JpaRepository<Subject, Integer> {
 
 	@Override
 	public Page<Subject> findAll(Pageable pageable);
-    public Page<Subject> findByDepartmentId(int departmentId, Pageable pageable);
 
+	public Page<Subject> findByDepartmentId(int departmentId, Pageable pageable);
 
 	public default List<Subject> findAll(Pagination pagination) {
-		Pageable pageable = PageRequest.of(pagination.getPg() - 1, pagination.getSz()
-				, Sort.by(Sort.Direction.ASC, "grade"));
+		Pageable pageable = PageRequest.of(pagination.getPg() - 1, pagination.getSz(),
+				Sort.by(Sort.Direction.ASC, "grade"));
 		Page<Subject> page = findAll(pageable);
-		pagination.setRecordCount((int)page.getTotalElements());
+		pagination.setRecordCount((int) page.getTotalElements());
 		return page.getContent();
 	}
 
-    public default List<Subject> findByDepartmentId(Pagination pagination) {
-        Pageable pageable = PageRequest.of(pagination.getPg() - 1, pagination.getSz(),
-        		Sort.by(Sort.Direction.ASC, "grade"));
-        Page<Subject> page = findByDepartmentId(pagination.getDi(), pageable);
-        pagination.setRecordCount((int)page.getTotalElements());
-        return page.getContent();
-    }
+	public default List<Subject> findByDepartmentId(Pagination pagination) {
+		Pageable pageable = PageRequest.of(pagination.getPg() - 1, pagination.getSz(),
+				Sort.by(Sort.Direction.ASC, "grade"));
+		Page<Subject> page = findByDepartmentId(pagination.getDi(), pageable);
+		pagination.setRecordCount((int) page.getTotalElements());
+		return page.getContent();
+	}
 
 }

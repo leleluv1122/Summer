@@ -32,12 +32,13 @@
     <fullyQualifiedTypeName name="net.lele.domain.Subject"/>
     <fullyQualifiedTypeName name="net.lele.model.Pagination"/>
     <fullyQualifiedTypeName name="org.springframework.data.domain.PageRequest"/>
-    <fullyQualifiedTypeName name="org.springframework.data.domain.Sort"/>
-    <fullyQualifiedTypeName name="org.springframework.data.domain.Sort.Direction"/>
     <fullyQualifiedTypeName name="org.springframework.security.core.context.SecurityContextHolder"/>
     <fullyQualifiedTypeName name="org.springframework.security.core.Authentication"/>
     <fullyQualifiedTypeName name="net.lele.domain.User"/>
     <fullyQualifiedTypeName name="org.hibernate.annotations.common.util.impl.Log_.logger"/>
     <fullyQualifiedTypeName name="org.hibernate.validator.internal.util.logging.Log_.logger"/>
     <fullyQualifiedTypeName name="org.hibernate.validator.internal.util.logging.Log"/>
+    <fullyQualifiedTypeName name="net.lele.domain.Classs"/>
+    <fullyQualifiedTypeName name="org.springframework.data.domain.Sort"/>
+    <fullyQualifiedTypeName name="org.springframework.data.domain.Sort.Direction"/>
 </qualifiedTypeNameHistroy>
