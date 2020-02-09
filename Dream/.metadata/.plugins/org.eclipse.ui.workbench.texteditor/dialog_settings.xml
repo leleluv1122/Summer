@@ -6,8 +6,10 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="&lt;%-- &lt;sec:authorize access=&quot;authenticated&quot;&gt;"/>
+		<item key="selection" value="bgcolor"/>
 		<list key="findhistory">
+			<item value="f"/>
+			<item value="bgcolor"/>
 			<item value="&lt;%-- &lt;sec:authorize access=&quot;authenticated&quot;&gt;"/>
 			<item value="springframework"/>
 			<item value="appServlet"/>
