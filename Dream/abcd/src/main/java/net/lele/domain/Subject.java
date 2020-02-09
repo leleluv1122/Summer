@@ -1,6 +1,5 @@
 package net.lele.domain;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -23,8 +22,10 @@ public class Subject {
 
 	int grade;
 	String name;
-	@Column(name = "class")
-	String classs;
+
+	@ManyToOne
+	@JoinColumn(name = "class")
+	Classs classs;
 
 	int credit;
 

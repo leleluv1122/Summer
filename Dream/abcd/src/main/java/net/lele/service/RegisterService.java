@@ -16,8 +16,4 @@ public class RegisterService {
 	public List<Register> findAll() {
 		return registerRepository.findAll();
 	}
-
-	public List<Register> findOneByUserId(int id) {
-		return registerRepository.findOneByUserId(id);
-	}
 }

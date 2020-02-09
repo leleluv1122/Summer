@@ -107,7 +107,7 @@ table {
 									<td>${ subject.grade }</td>
 									<td>${ subject.name }</td>
 									<td>${ subject.id }</td>
-									<td>${ subject.classs }</td>
+									<td>${ subject.classs.name }</td>
 									<td>${ subject.credit }</td>
 								</tr>
 							</c:forEach>

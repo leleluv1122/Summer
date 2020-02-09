@@ -41,24 +41,23 @@ public class UserController {
 		return "user/info";
 	}
 
-	@RequestMapping(value="user/subjectlist", method= RequestMethod.GET)
+	@RequestMapping(value = "user/subjectlist", method = RequestMethod.GET)
 	public String subjectlist(Pagination pagination, Model model) throws Exception {
 		List<Subject> list;
-        if (pagination.getDi() == 0)
-            list = subjectService.findAll(pagination);
-        else
-            list = subjectService.findByDepartmentId(pagination);
+		if (pagination.getDi() == 0)
+			list = subjectService.findAll(pagination);
+		else
+			list = subjectService.findByDepartmentId(pagination);
 
 		model.addAttribute("list", list);
-        model.addAttribute("departments", departmentService.findAll());
+		model.addAttribute("departments", departmentService.findAll());
 		return "user/subjectlist";
 	}
 
-	@RequestMapping(value ="user/register", method=RequestMethod.GET)
-	public String register(Model model) throws Exception {
+	@RequestMapping(value = "user/register", method = RequestMethod.GET)
+	public String register(Model model) throws Exception { //사용자id찾아서 내 성적만 보기 아직못함
+		model.addAttribute("user", userService.findAll());
 		model.addAttribute("register", registerService.findAll());
 		return "user/register";
-
-		 /*registerService.findOneByUserId(userService.currentId())*/
 	}
 }

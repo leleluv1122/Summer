@@ -11,7 +11,6 @@
     <fullyQualifiedTypeName name="org.slf4j.LoggerFactory"/>
     <fullyQualifiedTypeName name="org.slf4j.Logger"/>
     <fullyQualifiedTypeName name="java.util.stream.Stream"/>
-    <fullyQualifiedTypeName name="net.lele.domain.User"/>
     <fullyQualifiedTypeName name="lombok.Data"/>
     <fullyQualifiedTypeName name="java.sql.Date"/>
     <fullyQualifiedTypeName name="javax.persistence.TemporalType"/>
@@ -37,4 +36,8 @@
     <fullyQualifiedTypeName name="org.springframework.data.domain.Sort.Direction"/>
     <fullyQualifiedTypeName name="org.springframework.security.core.context.SecurityContextHolder"/>
     <fullyQualifiedTypeName name="org.springframework.security.core.Authentication"/>
+    <fullyQualifiedTypeName name="net.lele.domain.User"/>
+    <fullyQualifiedTypeName name="org.hibernate.annotations.common.util.impl.Log_.logger"/>
+    <fullyQualifiedTypeName name="org.hibernate.validator.internal.util.logging.Log_.logger"/>
+    <fullyQualifiedTypeName name="org.hibernate.validator.internal.util.logging.Log"/>
 </qualifiedTypeNameHistroy>

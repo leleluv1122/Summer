@@ -35,12 +35,10 @@ table {
 		<div class="menu">
 			<span><sec:authorize access="authenticated">
 					<a class="btn btn-light" style="color: black" href="${R}user/info">학생정보</a>
-				</sec:authorize></span> 
-				<span><sec:authorize access="authenticated">
+				</sec:authorize></span> <span><sec:authorize access="authenticated">
 					<a class="btn btn-light" style="color: black"
 						href="${R}user/subjectlist">개설교과목조회</a>
-				</sec:authorize></span>
-				<span><sec:authorize access="authenticated">
+				</sec:authorize></span> <span><sec:authorize access="authenticated">
 					<a class="btn btn-light" style="color: black"
 						href="${R}user/register">취득성적</a>
 				</sec:authorize></span>
@@ -83,14 +81,16 @@ table {
 						<tbody>
 							<c:forEach var="register" items="${ register }">
 								<tr>
+									<c:if test="${register.user.id == '1' }">
 									<td>${ register.year }</td>
 									<td>${ register.term }</td>
 									<td>${ register.subject.id }</td>
 									<td>${ register.subject.name }</td>
-									<td>${ register.subject.classs }</td>
+									<td>${ register.subject.classs.name }</td>
 									<td>${ register.subject.credit }</td>
 									<td>${ register.grade }</td>
 									<td>${ register.subject.professor.name }</td>
+									</c:if>
 								</tr>
 							</c:forEach>
 						</tbody>
