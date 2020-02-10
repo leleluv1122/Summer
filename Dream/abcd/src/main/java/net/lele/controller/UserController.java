@@ -36,10 +36,6 @@ public class UserController {
 		return "user/index"; // 로그인한 사용자를 위한 첫 페이지 URL
 	}
 
-	/*
-	 * public List<Subject> subjects(){ return subjectService.findAll(); }
-	 */
-
 	@RequestMapping(value = "user/info", method = RequestMethod.GET)
 	public String info(Model model) throws Exception {
 		model.addAttribute("user", userService.findAll());
@@ -70,6 +66,10 @@ public class UserController {
 	public String register(Model model) throws Exception { // 사용자id찾아서 내 성적만 보기 아직못함
 		model.addAttribute("user", userService.findAll());
 		model.addAttribute("register", registerService.findAll());
+		/*
+		 * model.addAttribute("subjectcount",
+		 * subjectService.findSubjectCountOfClasss());
+		 */
 		return "user/register";
 	}
 }

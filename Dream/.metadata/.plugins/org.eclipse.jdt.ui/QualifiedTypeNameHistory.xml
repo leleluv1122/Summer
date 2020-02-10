@@ -28,7 +28,6 @@
     <fullyQualifiedTypeName name="net.lele.domain.File"/>
     <fullyQualifiedTypeName name="javax.persistence.OneToOne"/>
     <fullyQualifiedTypeName name="javax.validation.constraints.Max"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="net.lele.domain.Subject"/>
     <fullyQualifiedTypeName name="net.lele.model.Pagination"/>
     <fullyQualifiedTypeName name="org.springframework.data.domain.PageRequest"/>
@@ -41,4 +40,9 @@
     <fullyQualifiedTypeName name="net.lele.domain.Classs"/>
     <fullyQualifiedTypeName name="org.springframework.data.domain.Sort"/>
     <fullyQualifiedTypeName name="org.springframework.data.domain.Sort.Direction"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
+    <fullyQualifiedTypeName name="net.lele.domain.Register"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="net.lele.repository.SubjectRepository"/>
+    <fullyQualifiedTypeName name="org.springframework.security.core.userdetails.UserDetails"/>
 </qualifiedTypeNameHistroy>

@@ -82,17 +82,49 @@ table {
 							<c:forEach var="register" items="${ register }">
 								<tr>
 									<c:if test="${register.user.id == '1' }">
-									<td>${ register.year }</td>
-									<td>${ register.term }</td>
-									<td>${ register.subject.id }</td>
-									<td>${ register.subject.name }</td>
-									<td>${ register.subject.classs.name }</td>
-									<td>${ register.subject.credit }</td>
-									<td>${ register.grade }</td>
-									<td>${ register.subject.professor.name }</td>
+										<td>${ register.year }</td>
+										<td>${ register.term }</td>
+										<td>${ register.subject.id }</td>
+										<td>${ register.subject.name }</td>
+										<td>${ register.subject.classs.name }</td>
+										<td>${ register.subject.credit }</td>
+										<td>${ register.grade }</td>
+										<td>${ register.subject.professor.name }</td>
 									</c:if>
 								</tr>
 							</c:forEach>
+						</tbody>
+					</table> <br />
+
+					<table style="width: 100%;">
+						<thead>
+							<tr>
+								<th style="text-align: center">전공기초</th>
+								<th style="text-align: center">전공선택</th>
+								<th style="text-align: center">전공필수</th>
+								<th style="text-align: center">교양필수</th>
+								<th style="text-align: center">교양선택</th>
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach var="register" items="${ register }">
+
+								<tr>
+									<c:if test="${register.user.id == '1' }">
+											
+										<%-- <c:if test="${subjectcount.id == '1' }">
+											<td>${subjectcount.name }</td>
+											<td>${subjectcount.c}</td>
+										</c:if> --%>
+										<%-- <td>${register.subject.classs.name == '전공선택' }</td>
+										<td>${register.subject.classs.name == '전공필수' }</td> --%>
+										<!-- <td>망함</td>
+										<td>rere</td> -->
+									</c:if>
+								</tr>
+
+							</c:forEach>
+
 						</tbody>
 					</table>
 				</td>

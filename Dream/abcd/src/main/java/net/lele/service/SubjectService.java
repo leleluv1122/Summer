@@ -30,4 +30,9 @@ public class SubjectService {
 	public List<Subject> findSubjectById(int id){
 		return subjectRepository.findSubjectById(id);
 	}
+
+	/*
+	 * public List<Object[]> findSubjectCountOfClasss(){ return
+	 * subjectRepository.findSubjectCountOfClasss(); }
+	 */
 }

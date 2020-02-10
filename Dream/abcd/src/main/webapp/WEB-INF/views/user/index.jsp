@@ -119,9 +119,9 @@
 							<col width="14%" />
 						</colgroup>
 						<tr>
-							<td><label onclick="prevCalendar()"> ← </label></td>
+							<td><a onclick="prevCalendar()" style="cursor:pointer;  text-decoration: none;"> ← </a></td>
 							<td align="center" id="tbCalendarYM" colspan="5">yyyy년 m월</td>
-							<td><label onclick="nextCalendar()"> → </label></td>
+							<td><a onclick="nextCalendar()" style="cursor:pointer; text-decoration: none;"> → </a></td>
 						</tr>
 						<tr>
 							<td align="center"><font color="#F79DC2">일</td>

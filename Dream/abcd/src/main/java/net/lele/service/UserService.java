@@ -68,5 +68,4 @@ public class UserService {
 		User user = createEntity(userModel);
 		userRepository.save(user);
 	}
-
 }

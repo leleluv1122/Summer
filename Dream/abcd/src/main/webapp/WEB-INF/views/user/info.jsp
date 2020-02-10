@@ -18,6 +18,12 @@
 <title>학생 정보</title>
 
 <link rel="stylesheet" href="${R}res/common.css">
+<style>
+table {
+	table-layout: fixed;
+	word-break: break-all;
+}
+</style>
 </head>
 <body>
 	<div class="container">
@@ -54,27 +60,31 @@
 					<p>치킨</p>
 				</td>
 				<td>
-					<table class="table table-bordered" style="width: 500px;">
+					<table style="width: 100%;">
 
 						<tr>
-							<td>이름</td>
+							<td bgcolor="E7EEE3" ><b>이름</b></td>
 							<td><sec:authentication property="user.name" /></td>
 						</tr>
 						<tr>
-							<td>이메일</td>
+							<td bgcolor="E7EEE3" ><b>학번</b></td>
+							<td><sec:authentication property="user.userId" /></td>
+						</tr>
+						<tr>
+							<td bgcolor="E7EEE3" ><b>전공</b></td>
+							<td><sec:authentication property="user.department.name" /></td>
+						</tr>
+						<tr>
+							<td bgcolor="E7EEE3" ><b>이메일</b></td>
 							<td><sec:authentication property="user.email" /></td>
 						</tr>
 						<tr>
-							<td>전화번호</td>
+							<td bgcolor="E7EEE3" ><b>전화번호</b></td>
 							<td><sec:authentication property="user.phone" /></td>
 						</tr>
 						<tr>
-							<td>주소</td>
+							<td bgcolor=E7EEE3 ><b>주소</b></td>
 							<td><sec:authentication property="user.address" /></td>
-						</tr>
-						<tr>
-							<td>전공</td>
-							<td><sec:authentication property="user.department.name" /></td>
 						</tr>
 					</table>
 				</td>

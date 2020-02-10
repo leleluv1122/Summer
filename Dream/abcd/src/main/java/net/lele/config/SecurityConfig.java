@@ -54,7 +54,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
         http.logout() //로그아웃 설정 시작
             .logoutRequestMatcher(new AntPathRequestMatcher("/user/logout_processing"))
             // 로그아웃 버튼이나 링크를 눌렀을 때 요청할 URL 설정
-            .logoutSuccessUrl("/guest/login")
+            .logoutSuccessUrl("/guest/index")
             //로그아웃된 후  redirect URL 설정
             .invalidateHttpSession(true);
         	// 로그아웃할 때 session에 들어있는 데이터를 전부 지우라는 설정
