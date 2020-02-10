@@ -32,4 +32,8 @@ public class Subject {
 	@ManyToOne
 	@JoinColumn(name = "professorId")
 	Professor professor;
+
+	String detail;
+	String goal;
+	String book;
 }

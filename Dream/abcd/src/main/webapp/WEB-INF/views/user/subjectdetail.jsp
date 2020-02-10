@@ -32,8 +32,7 @@ table {
 
 		<a class="btn btn-light" style="color: black; font-size: 3em;"
 			href="${R}user/index">학사행정</a> <a class="btn btn-light btn-xs"
-			style="color: black; float: right;" href="logout_processing">로그아웃</a>
-
+			style="color: black; float: right;" href="${R}user/logout_processing">로그아웃</a>
 		<hr />
 		<div class="menu">
 			<span><sec:authorize access="authenticated">
@@ -41,8 +40,7 @@ table {
 				</sec:authorize></span> <span><sec:authorize access="authenticated">
 					<a class="btn btn-light" style="color: black"
 						href="${R}user/subjectlist">개설교과목조회</a>
-				</sec:authorize></span>
-				<span><sec:authorize access="authenticated">
+				</sec:authorize></span> <span><sec:authorize access="authenticated">
 					<a class="btn btn-light" style="color: black"
 						href="${R}user/register">취득성적</a>
 				</sec:authorize></span>
@@ -62,62 +60,55 @@ table {
 					<p>치킨</p>
 				</td>
 				<td>
-				<form:form method="get" modelAttribute="pagination"
-						class="form-inline">
-						<form:hidden path="pg" value="1" />
-						<form:hidden path="sz" />
-						<span>학과:</span>
-						<form:select path="di" class="form-control">
-							<form:option value="0">전체</form:option>
-							<form:options itemValue="id" itemLabel="name"
-								items="${ departments }" />
-						</form:select>
-						<button type="submit" class="btn btn-default">검색</button>
-					</form:form>
-
-					<table id="subject" class="table table-bordered">
-						<colgroup>
-							<col width="8%" />
-							<col width="8%" />
-							<col width="15%" />
-							<col width="8%" />
-							<col width="23%" />
-							<col width="11%" />
-							<col width="*" />
-							<col width="8%" />
-						</colgroup>
-						<thead>
+					
+					<!-- 교과목개요 -->
+					<table style="width:100%;">
+						<c:forEach var="subject" items="${ subject }">
 							<tr>
-								<th>연도</th>
-								<th>학기</th>
-								<th>학부/과</th>
-								<th>학년</th>
-								<th>교과목명</th>
-								<th>과목코드</th>
-								<th>이수구분</th>
-								<th>학점</th>
+								<td bgcolor="E7EEE3" ><b>교과목번호</b></td>
+								<td>${subject.id }</td>
 							</tr>
-						</thead>
-						<tbody>
-							<c:forEach var="subject" items="${ list }">
-								<tr>
-									<td>${ subject.year }</td>
-									<td>${ subject.term }</td>
-									<td>${ subject.department.name }</td>
-									<td>${ subject.grade }</td>
-									<td><a class="btn btn-light" style="color: black" href="${R}user/subjectdetail/${subject.id}">${ subject.name }</a></td>
-									<%-- <td onclick="location.href='/user/subjectdetail/${subject.id}'">${ subject.name }</td> --%>    
-									<td>${ subject.id }</td>
-									<td>${ subject.classs.name }</td>
-									<td>${ subject.credit }</td>
-								</tr>
-							</c:forEach>
-						</tbody>
-					</table></td>
+							<tr>
+								<td bgcolor="E7EEE3" ><b>이수구분</b></td>
+								<td>${subject.classs.name }</td>
+							</tr>
+							<tr>
+								<td bgcolor="E7EEE3" ><b>교과목명</b></td>
+								<td>${subject.name }</td>
+							</tr>
+							<tr>
+								<td bgcolor="E7EEE3" ><b>학점</b></td>
+								<td>${subject.credit }</td>
+							</tr>
+						</c:forEach>
+					</table>
+					
+					<br />
+					
+					<!-- 교수+ 교재 + 강의목표! -->
+					<table style="width:100%;">
+						<c:forEach var="subject" items="${ subject }">
+							<tr>
+								<td bgcolor="E7EEE3"><b>교수명</b></td>
+								<td>${subject.professor.name }</td>
+							</tr>
+							<tr>
+								<td bgcolor="E7EEE3"><b>주교재</b></td>
+								<td>${subject.book }</td>
+							</tr>
+							<tr>
+								<td bgcolor="E7EEE3"><b>강의개요</b></td>
+								<td>${subject.detail }</td>
+							</tr>
+							<tr>
+								<td bgcolor="E7EEE3"><b>강의목표</b></td>
+								<td>${subject.goal }</td>
+							</tr>
+						</c:forEach>
+					</table>
+				</td>
 			</tr>
 		</table>
-		<my:pagination pageSize="${ pagination.sz }"
-			recordCount="${ pagination.recordCount }" queryStringName="pg" />
 
 		<div class="footer">
 			<a href="http://www.hansei.ac.kr"> <img

@@ -7,6 +7,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import net.lele.domain.Subject;
 import net.lele.model.Pagination;
@@ -34,4 +35,6 @@ public interface SubjectRepository extends JpaRepository<Subject, Integer> {
 		return page.getContent();
 	}
 
+	@Query("SELECT s FROM Subject s WHERE s.id = ?1")
+	List<Subject> findSubjectById(int id);
 }
