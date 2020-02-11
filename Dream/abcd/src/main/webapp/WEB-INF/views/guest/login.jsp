@@ -39,6 +39,10 @@
 		<sec:authorize access="authenticated">
 			<a class="btn btn-light btn-xs" style="color: black; float: right;"
 				href="${R}user/logout_processing">로그아웃</a>
+			<a class="btn btn-light btn-xs" href="${R}user/info"
+				style="color: black; float: right;"> <sec:authentication
+					property="user.name" />
+			</a>
 		</sec:authorize>
 
 
@@ -50,7 +54,8 @@
 				href="${R}user/subjectlist">개설교과목조회</a>
 			</span> <span> <a class="btn btn-light" style="color: black"
 				href="${R}user/register">취득성적</a>
-			</span>
+			</span> <a class="btn btn-light" style="color: black"
+				href="${R}user/scholarship">장학내역</a></span>
 		</div>
 		<table>
 			<tr>

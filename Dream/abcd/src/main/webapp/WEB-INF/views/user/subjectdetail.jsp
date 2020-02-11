@@ -33,6 +33,10 @@ table {
 		<a class="btn btn-light" style="color: black; font-size: 3em;"
 			href="${R}user/index">학사행정</a> <a class="btn btn-light btn-xs"
 			style="color: black; float: right;" href="${R}user/logout_processing">로그아웃</a>
+		<a class="btn btn-light btn-xs" href="${R}user/info"
+			style="color: black; float: right;"> <sec:authentication
+				property="user.name" />
+		</a>
 		<hr />
 		<div class="menu">
 			<span><sec:authorize access="authenticated">
@@ -43,6 +47,9 @@ table {
 				</sec:authorize></span> <span><sec:authorize access="authenticated">
 					<a class="btn btn-light" style="color: black"
 						href="${R}user/register">취득성적</a>
+				</sec:authorize></span><span><sec:authorize access="authenticated">
+					<a class="btn btn-light" style="color: black"
+						href="${R}user/scholarship">장학내역</a>
 				</sec:authorize></span>
 		</div>
 		<table>
@@ -60,33 +67,28 @@ table {
 					<p>치킨</p>
 				</td>
 				<td>
-					
 					<!-- 교과목개요 -->
-					<table style="width:100%;">
+					<table style="width: 100%;">
 						<c:forEach var="subject" items="${ subject }">
 							<tr>
-								<td bgcolor="E7EEE3" ><b>교과목번호</b></td>
+								<td bgcolor="E7EEE3"><b>교과목번호</b></td>
 								<td>${subject.id }</td>
 							</tr>
 							<tr>
-								<td bgcolor="E7EEE3" ><b>이수구분</b></td>
+								<td bgcolor="E7EEE3"><b>이수구분</b></td>
 								<td>${subject.classs.name }</td>
 							</tr>
 							<tr>
-								<td bgcolor="E7EEE3" ><b>교과목명</b></td>
+								<td bgcolor="E7EEE3"><b>교과목명</b></td>
 								<td>${subject.name }</td>
 							</tr>
 							<tr>
-								<td bgcolor="E7EEE3" ><b>학점</b></td>
+								<td bgcolor="E7EEE3"><b>학점</b></td>
 								<td>${subject.credit }</td>
 							</tr>
 						</c:forEach>
-					</table>
-					
-					<br />
-					
-					<!-- 교수+ 교재 + 강의목표! -->
-					<table style="width:100%;">
+					</table> <br /> <!-- 교수+ 교재 + 강의목표! -->
+					<table style="width: 100%;">
 						<c:forEach var="subject" items="${ subject }">
 							<tr>
 								<td bgcolor="E7EEE3"><b>교수명</b></td>

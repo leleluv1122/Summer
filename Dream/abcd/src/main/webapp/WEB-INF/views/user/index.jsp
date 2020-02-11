@@ -17,7 +17,6 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style type="text/css">
-
 </style>
 <script type="text/javascript">
 	var today = new Date();
@@ -79,7 +78,12 @@
 
 		<a class="btn btn-light" style="color: black; font-size: 3em;"
 			href="${R}user/index">학사행정</a> <a class="btn btn-light btn-xs"
-			style="color: black; float: right;" href="logout_processing">로그아웃</a>
+			style="color: black; float: right;" href="logout_processing">로그아웃</a><a
+			class="btn btn-light btn-xs" href="${R}user/info"
+			style="color: black; float: right;"> <sec:authentication
+				property="user.name" />
+		</a>
+
 
 		<hr />
 		<div class="menu">
@@ -91,6 +95,9 @@
 				</sec:authorize></span> <span><sec:authorize access="authenticated">
 					<a class="btn btn-light" style="color: black"
 						href="${R}user/register">취득성적</a>
+				</sec:authorize></span><span><sec:authorize access="authenticated">
+					<a class="btn btn-light" style="color: black"
+						href="${R}user/scholarship">장학내역</a>
 				</sec:authorize></span>
 		</div>
 		<table>
@@ -108,7 +115,7 @@
 					<p>치킨</p>
 				</td>
 				<td>
-					<table id="calendar" border="1" >
+					<table id="calendar" border="1">
 						<colgroup>
 							<col width="14%" />
 							<col width="14%" />
@@ -119,9 +126,11 @@
 							<col width="14%" />
 						</colgroup>
 						<tr>
-							<td><a onclick="prevCalendar()" style="cursor:pointer;  text-decoration: none;"> ← </a></td>
+							<td><a onclick="prevCalendar()"
+								style="cursor: pointer; text-decoration: none;"> ← </a></td>
 							<td align="center" id="tbCalendarYM" colspan="5">yyyy년 m월</td>
-							<td><a onclick="nextCalendar()" style="cursor:pointer; text-decoration: none;"> → </a></td>
+							<td><a onclick="nextCalendar()"
+								style="cursor: pointer; text-decoration: none;"> → </a></td>
 						</tr>
 						<tr>
 							<td align="center"><font color="#F79DC2">일</td>
@@ -132,8 +141,7 @@
 							<td align="center">금</td>
 							<td align="center"><font color="skyblue">토</td>
 						</tr>
-					</table> 
-					<script language="javascript" type="text/javascript">
+					</table> <script language="javascript" type="text/javascript">
 						buildCalendar();
 					</script>
 				</td>

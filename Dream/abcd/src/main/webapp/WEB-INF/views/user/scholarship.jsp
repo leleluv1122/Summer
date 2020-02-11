@@ -15,8 +15,7 @@
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<title>학생 정보</title>
-
+<title>장학 내역</title>
 <link rel="stylesheet" href="${R}res/common.css">
 <style>
 table {
@@ -46,7 +45,7 @@ table {
 				</sec:authorize></span> <span><sec:authorize access="authenticated">
 					<a class="btn btn-light" style="color: black"
 						href="${R}user/register">취득성적</a>
-				</sec:authorize></span><span><sec:authorize access="authenticated">
+				</sec:authorize></span> <span><sec:authorize access="authenticated">
 					<a class="btn btn-light" style="color: black"
 						href="${R}user/scholarship">장학내역</a>
 				</sec:authorize></span>
@@ -63,35 +62,43 @@ table {
 					<p>흠냐링</p>
 					<p>뉴뉴</p>
 					<p>초밥</p>
-					<p>치킨</p>
+					<p>
+						치킨
+						<sec:authentication property="user.userId" />
+					</p>
 				</td>
 				<td>
-					<table style="width: 100%;">
-
-						<tr>
-							<td bgcolor="E7EEE3"><b>이름</b></td>
-							<td><sec:authentication property="user.name" /></td>
-						</tr>
-						<tr>
-							<td bgcolor="E7EEE3"><b>학번</b></td>
-							<td><sec:authentication property="user.userId" /></td>
-						</tr>
-						<tr>
-							<td bgcolor="E7EEE3"><b>전공</b></td>
-							<td><sec:authentication property="user.department.name" /></td>
-						</tr>
-						<tr>
-							<td bgcolor="E7EEE3"><b>이메일</b></td>
-							<td><sec:authentication property="user.email" /></td>
-						</tr>
-						<tr>
-							<td bgcolor="E7EEE3"><b>전화번호</b></td>
-							<td><sec:authentication property="user.phone" /></td>
-						</tr>
-						<tr>
-							<td bgcolor=E7EEE3><b>주소</b></td>
-							<td><sec:authentication property="user.address" /></td>
-						</tr>
+					<table id="register" class="table table-bordered">
+						<colgroup>
+							<col width="8%" />
+							<col width="8%" />
+							<col width="*" />
+							<col width="12%" />
+							<col width="16%" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th>연도</th>
+								<th>학기</th>
+								<th>장학명</th>
+								<th>장학금</th>
+								<th>지급유형</th>
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach var="s" items="${ scholarship }">
+								<tr>
+									<sec:authentication property="user.userId" var="currentUserId" />
+									<c:if test="${currentUserId == s.user.userId}">
+										<td>${ s.year }</td>
+										<td>${ s.term }</td>
+										<td>${ s.detail }</td>
+										<td>${ s.money }</td>
+										<td>${ s.type }</td>
+									</c:if>
+								</tr>
+							</c:forEach>
+						</tbody>
 					</table>
 				</td>
 			</tr>

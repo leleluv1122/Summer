@@ -14,6 +14,7 @@ import net.lele.model.Pagination;
 import net.lele.service.DepartmentService;
 import net.lele.service.ProfessorService;
 import net.lele.service.RegisterService;
+import net.lele.service.ScholarshipService;
 import net.lele.service.SubjectService;
 import net.lele.service.UserService;
 
@@ -30,6 +31,8 @@ public class UserController {
 	ProfessorService professorService;
 	@Autowired
 	RegisterService registerService;
+	@Autowired
+	ScholarshipService scholarshipService;
 
 	@RequestMapping("user/index")
 	public String index() throws Exception {
@@ -63,7 +66,7 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "user/register", method = RequestMethod.GET)
-	public String register(Model model) throws Exception { // 사용자id찾아서 내 성적만 보기 아직못함
+	public String register(Model model) throws Exception { // 사용자id찾아서 내 성적만 보기 아직못함 시벌탱
 		model.addAttribute("user", userService.findAll());
 		model.addAttribute("register", registerService.findAll());
 		/*
@@ -71,5 +74,16 @@ public class UserController {
 		 * subjectService.findSubjectCountOfClasss());
 		 */
 		return "user/register";
+	}
+
+	@RequestMapping(value = "user/scholarship", method = RequestMethod.GET)
+	public String scholarship(Model model) throws Exception {
+		/*
+		 * List<User> user = userService.findAll(); ((User) user).getUserId();
+		 */
+
+		model.addAttribute("user", userService.findAll());
+		model.addAttribute("scholarship", scholarshipService.findAll());
+		return "user/scholarship";
 	}
 }

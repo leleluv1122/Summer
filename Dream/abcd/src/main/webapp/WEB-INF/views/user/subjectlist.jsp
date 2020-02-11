@@ -32,7 +32,11 @@ table {
 
 		<a class="btn btn-light" style="color: black; font-size: 3em;"
 			href="${R}user/index">학사행정</a> <a class="btn btn-light btn-xs"
-			style="color: black; float: right;" href="logout_processing">로그아웃</a>
+			style="color: black; float: right;" href="logout_processing">로그아웃</a><a
+			class="btn btn-light btn-xs" href="${R}user/info"
+			style="color: black; float: right;"> <sec:authentication
+				property="user.name" />
+		</a>
 
 		<hr />
 		<div class="menu">
@@ -41,10 +45,12 @@ table {
 				</sec:authorize></span> <span><sec:authorize access="authenticated">
 					<a class="btn btn-light" style="color: black"
 						href="${R}user/subjectlist">개설교과목조회</a>
-				</sec:authorize></span>
-				<span><sec:authorize access="authenticated">
+				</sec:authorize></span> <span><sec:authorize access="authenticated">
 					<a class="btn btn-light" style="color: black"
 						href="${R}user/register">취득성적</a>
+				</sec:authorize></span><span><sec:authorize access="authenticated">
+					<a class="btn btn-light" style="color: black"
+						href="${R}user/scholarship">장학내역</a>
 				</sec:authorize></span>
 		</div>
 		<table>
@@ -61,8 +67,7 @@ table {
 					<p>초밥</p>
 					<p>치킨</p>
 				</td>
-				<td>
-				<form:form method="get" modelAttribute="pagination"
+				<td><form:form method="get" modelAttribute="pagination"
 						class="form-inline">
 						<form:hidden path="pg" value="1" />
 						<form:hidden path="sz" />
@@ -105,8 +110,9 @@ table {
 									<td>${ subject.term }</td>
 									<td>${ subject.department.name }</td>
 									<td>${ subject.grade }</td>
-									<td><a class="btn btn-light" style="color: black" href="${R}user/subjectdetail/${subject.id}">${ subject.name }</a></td>
-									<%-- <td onclick="location.href='/user/subjectdetail/${subject.id}'">${ subject.name }</td> --%>    
+									<td><a class="btn btn-light" style="color: black"
+										href="${R}user/subjectdetail/${subject.id}">${ subject.name }</a></td>
+									<%-- <td onclick="location.href='/user/subjectdetail/${subject.id}'">${ subject.name }</td> --%>
 									<td>${ subject.id }</td>
 									<td>${ subject.classs.name }</td>
 									<td>${ subject.credit }</td>

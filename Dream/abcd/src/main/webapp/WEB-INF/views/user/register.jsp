@@ -29,7 +29,11 @@ table {
 
 		<a class="btn btn-light" style="color: black; font-size: 3em;"
 			href="${R}user/index">학사행정</a> <a class="btn btn-light btn-xs"
-			style="color: black; float: right;" href="logout_processing">로그아웃</a>
+			style="color: black; float: right;" href="logout_processing">로그아웃</a><a
+			class="btn btn-light btn-xs" href="${R}user/info"
+			style="color: black; float: right;"> <sec:authentication
+				property="user.name" />
+		</a>
 
 		<hr />
 		<div class="menu">
@@ -41,6 +45,9 @@ table {
 				</sec:authorize></span> <span><sec:authorize access="authenticated">
 					<a class="btn btn-light" style="color: black"
 						href="${R}user/register">취득성적</a>
+				</sec:authorize></span><span><sec:authorize access="authenticated">
+					<a class="btn btn-light" style="color: black"
+						href="${R}user/scholarship">장학내역</a>
 				</sec:authorize></span>
 		</div>
 		<table>
@@ -81,7 +88,8 @@ table {
 						<tbody>
 							<c:forEach var="register" items="${ register }">
 								<tr>
-									<c:if test="${register.user.id == '1' }">
+									<sec:authentication property="user.userId" var="currentUserId" />
+									<c:if test="${currentUserId == register.user.userId}">
 										<td>${ register.year }</td>
 										<td>${ register.term }</td>
 										<td>${ register.subject.id }</td>
@@ -110,16 +118,10 @@ table {
 							<c:forEach var="register" items="${ register }">
 
 								<tr>
-									<c:if test="${register.user.id == '1' }">
-											
-										<%-- <c:if test="${subjectcount.id == '1' }">
-											<td>${subjectcount.name }</td>
-											<td>${subjectcount.c}</td>
-										</c:if> --%>
-										<%-- <td>${register.subject.classs.name == '전공선택' }</td>
-										<td>${register.subject.classs.name == '전공필수' }</td> --%>
-										<!-- <td>망함</td>
-										<td>rere</td> -->
+									<sec:authentication property="user.userId" var="currentUserId" />
+									<c:if test="${currentUserId == register.user.userId}">
+
+										
 									</c:if>
 								</tr>
 
