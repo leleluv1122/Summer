@@ -1,4 +1,4 @@
-body { font-family: 굴림체; }
+/* body { font-family: 굴림체; } */
 
 thead th { background-color: #eee; }
 
@@ -76,4 +76,11 @@ div.footer div:nth-child(3) {
 	font: normal 9pt arial;
 	color: #aaa;
 	margin-top: 10px;
+}
+body {
+
+	padding-top: 0px;
+
+	padding-bottom: 30px;
+
 }

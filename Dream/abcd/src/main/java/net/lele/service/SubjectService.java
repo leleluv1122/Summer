@@ -14,7 +14,6 @@ public class SubjectService {
 	@Autowired
 	public SubjectRepository subjectRepository;
 
-
 	public List<Subject> findAll() {
 		return subjectRepository.findAll();
 	}
@@ -27,12 +26,12 @@ public class SubjectService {
 		return subjectRepository.findByDepartmentId(pagination);
 	}
 
-	public List<Subject> findSubjectById(int id){
+	public List<Subject> findSubjectById(int id) {
 		return subjectRepository.findSubjectById(id);
 	}
 
-	/*
-	 * public List<Object[]> findSubjectCountOfClasss(){ return
-	 * subjectRepository.findSubjectCountOfClasss(); }
-	 */
+	public List<Object> findSubjectCountOfClasss() {
+		return subjectRepository.findSubjectCountOfClasss();
+	}
+
 }

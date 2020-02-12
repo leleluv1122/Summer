@@ -38,8 +38,8 @@ public interface SubjectRepository extends JpaRepository<Subject, Integer> {
 	@Query("SELECT s FROM Subject s WHERE s.id = ?1")
 	List<Subject> findSubjectById(int id);
 
-	/*
-	 * @Query("SELECT s.classs.id as id, s.classs.name as name, COUNT(s) as c FROM Subject s GROUP BY s.classs.id"
-	 * ) List<Object[]> findSubjectCountOfClasss();
-	 */
+
+	@Query("SELECT s.classs.id as id, s.classs.name as name, COUNT(s) as count FROM Subject s GROUP BY s.classs.id")
+	List<Object> findSubjectCountOfClasss();
+
 }

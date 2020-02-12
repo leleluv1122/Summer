@@ -78,10 +78,6 @@ public class UserController {
 
 	@RequestMapping(value = "user/scholarship", method = RequestMethod.GET)
 	public String scholarship(Model model) throws Exception {
-		/*
-		 * List<User> user = userService.findAll(); ((User) user).getUserId();
-		 */
-
 		model.addAttribute("user", userService.findAll());
 		model.addAttribute("scholarship", scholarshipService.findAll());
 		return "user/scholarship";

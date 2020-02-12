@@ -16,62 +16,79 @@
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<style type="text/css">
-</style>
 <script type="text/javascript">
-	var today = new Date();
-	var date = new Date();
-	function prevCalendar() {
+	var today = new Date(); //오늘 날짜
+	var date = new Date(); //today의 Date를 세어준다
+	function prevCalendar() { //이전달
 		today = new Date(today.getFullYear(), today.getMonth() - 1, today
-				.getDate());
-		buildCalendar();
+				.getDate()); //이전달을 today에 저장하고 달력에 today를 넣어준다
+		buildCalendar(); //달력에 cell을 만들어서 출력
 	}
 
-	function nextCalendar() {
+	function nextCalendar() { //다음달
 		today = new Date(today.getFullYear(), today.getMonth() + 1, today
 				.getDate());
 		buildCalendar();
 	}
-	function buildCalendar() {
+	function buildCalendar() { //현재 달력만들기
 		var doMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+		// new를 써주면 정확한 월을 가져온다 0~11반환
 		var lastDate = new Date(today.getFullYear(), today.getMonth() + 1, 0);
 		var tbCalendar = document.getElementById("calendar");
+		//날짜를 찍을 테이블 변수를 만든다
 		var tbCalendarYM = document.getElementById("tbCalendarYM");
+		//테이블에 정확한 날짜 찍는 변수 html 표준언어로 바꿔줌 new안해서 +1해야된다.
 		tbCalendarYM.innerHTML = today.getFullYear() + "년 "
 				+ (today.getMonth() + 1) + "월";
 
+		/*while은 이번달이 끝나면 다음달로 넘겨주는 역할*/
 		while (tbCalendar.rows.length > 2) {
+			//열을 지워준다
+			// 기본 열 크기는 body부분에서 2로 고정
 			tbCalendar.deleteRow(tbCalendar.rows.length - 1);
+			// 테이블의 tr갯수만큼 열묶음 -1칸 해야 30일 이후로 담을 달에 순서대로 열이 이어짐
 		}
 		var row = null;
 		row = tbCalendar.insertRow();
-		var cnt = 0;
+		//테이블에 새로운열 삽입 /
+		var cnt = 0; //count, 셀의 갯수 세어주는 역할
 		for (i = 0; i < doMonth.getDay(); i++) {
-			cell = row.insertCell();
+			cell = row.insertCell(); //열 한칸한칸 만들어줌
 			cnt = cnt + 1;
 		}
+		/* for (i = (lastDate.getDate() % 7); i <= 7 - (lastDate.getDate % 7); i++) {
+			cell = row.insertCell();
+			cnt = cnt + 1;
+		} */
+		//달력출력
 		for (i = 1; i <= lastDate.getDate(); i++) {
+			//1일부터 마지막일까지
 			cell = row.insertCell();
 			cell.innerHTML = i;
 			cnt = cnt + 1;
-			if (cnt % 7 == 1) {
+			if (cnt % 7 == 1) { //일요일 계산
 				cell.innerHTML = "<font color=#F79DC2>" + i
 			}
-			if (cnt % 7 == 0) {
+			if (cnt % 7 == 0) { //토요일 계산
 				cell.innerHTML = "<font color=skyblue>" + i
 				row = calendar.insertRow();
 			}
 			if (today.getFullYear() == date.getFullYear()
 					&& today.getMonth() == date.getMonth()
 					&& i == date.getDate()) {
-				cell.bgColor = "#f2fff7";
+				cell.bgColor = "#FAF58C"; //오늘날짜에 색칠
 			}
 		}
+
 	}
 </script>
 <link rel="stylesheet" href="${R}res/common.css">
 <title>학사행정 메인</title>
-
+<style>
+table {
+	border-right: none border-left:none border-top:none border-bottom:none
+}
+</style>
 </head>
 <body>
 	<div class="container">
@@ -145,6 +162,7 @@
 						buildCalendar();
 					</script>
 				</td>
+				<td></td>
 			</tr>
 		</table>
 

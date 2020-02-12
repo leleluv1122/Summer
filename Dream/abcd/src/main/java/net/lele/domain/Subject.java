@@ -13,21 +13,21 @@ public class Subject {
 	@Id
 	int id;
 
-	int year;
-	int term;
+	int year; //2020년
+	int term; //1학기
 
 	@ManyToOne
 	@JoinColumn(name = "departmentId")
 	Department department;
 
-	int grade;
+	int grade; //학년
 	String name;
 
 	@ManyToOne
 	@JoinColumn(name = "class")
-	Classs classs;
+	Classs classs; //전필전선그런거
 
-	int credit;
+	int credit; //몇학점인지
 
 	@ManyToOne
 	@JoinColumn(name = "professorId")

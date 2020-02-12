@@ -64,7 +64,7 @@ table {
 					<p>초밥</p>
 					<p>
 						치킨
-						<sec:authentication property="user.userId" />
+						
 					</p>
 				</td>
 				<td>
