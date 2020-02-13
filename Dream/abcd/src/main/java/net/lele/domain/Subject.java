@@ -25,7 +25,7 @@ public class Subject {
 
 	@ManyToOne
 	@JoinColumn(name = "class")
-	Classs classs; //전필전선그런거
+	Classs classs; //전필전선그런
 
 	int credit; //몇학점인지
 

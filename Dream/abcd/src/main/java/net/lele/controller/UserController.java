@@ -69,11 +69,15 @@ public class UserController {
 	public String register(Model model) throws Exception { // 사용자id찾아서 내 성적만 보기 아직못함 시벌탱
 		model.addAttribute("user", userService.findAll());
 		model.addAttribute("register", registerService.findAll());
-		/*
-		 * model.addAttribute("subjectcount",
-		 * subjectService.findSubjectCountOfClasss());
-		 */
+		/* model.addAttribute("count", subjectService.findSubjectCountOfClasss()); */
 		return "user/register";
+	}
+
+	@RequestMapping(value = "user/allregister", method = RequestMethod.GET)
+	public String allregister(Model model) throws Exception { // 사용자id찾아서 내 성적만 보기 아직못함 시벌탱
+		model.addAttribute("user", userService.findAll());
+		model.addAttribute("register", registerService.findAll());
+		return "user/allregister";
 	}
 
 	@RequestMapping(value = "user/scholarship", method = RequestMethod.GET)

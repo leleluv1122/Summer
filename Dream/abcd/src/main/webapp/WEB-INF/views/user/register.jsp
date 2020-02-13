@@ -44,7 +44,10 @@ table {
 						href="${R}user/subjectlist">개설교과목조회</a>
 				</sec:authorize></span> <span><sec:authorize access="authenticated">
 					<a class="btn btn-light" style="color: black"
-						href="${R}user/register">취득성적</a>
+						href="${R}user/register">취득성적(학기)</a>
+				</sec:authorize></span><span><sec:authorize access="authenticated">
+					<a class="btn btn-light" style="color: black"
+						href="${R}user/allregister">취득성적</a>
 				</sec:authorize></span><span><sec:authorize access="authenticated">
 					<a class="btn btn-light" style="color: black"
 						href="${R}user/scholarship">장학내역</a>
@@ -90,43 +93,17 @@ table {
 								<tr>
 									<sec:authentication property="user.userId" var="currentUserId" />
 									<c:if test="${currentUserId == register.user.userId}">
-										<td>${ register.year }</td>
-										<td>${ register.term }</td>
+										<td>${ register.subject.year }</td>
+										<td>${ register.subject.term }</td>
 										<td>${ register.subject.id }</td>
 										<td>${ register.subject.name }</td>
 										<td>${ register.subject.classs.name }</td>
 										<td>${ register.subject.credit }</td>
-										<td>${ register.grade }</td>
+										<td>${ register.grade.name }</td>
 										<td>${ register.subject.professor.name }</td>
 									</c:if>
 								</tr>
 							</c:forEach>
-						</tbody>
-					</table> <br />
-
-					<table style="width: 100%;">
-						<thead>
-							<tr>
-								<th style="text-align: center">전공기초</th>
-								<th style="text-align: center">전공선택</th>
-								<th style="text-align: center">전공필수</th>
-								<th style="text-align: center">교양필수</th>
-								<th style="text-align: center">교양선택</th>
-							</tr>
-						</thead>
-						<tbody>
-							<c:forEach var="register" items="${ register }">
-
-								<tr>
-									<sec:authentication property="user.userId" var="currentUserId" />
-									<c:if test="${currentUserId == register.user.userId}">
-
-										
-									</c:if>
-								</tr>
-
-							</c:forEach>
-
 						</tbody>
 					</table>
 				</td>

@@ -30,8 +30,9 @@ public class SubjectService {
 		return subjectRepository.findSubjectById(id);
 	}
 
-	public List<Object> findSubjectCountOfClasss() {
-		return subjectRepository.findSubjectCountOfClasss();
-	}
+	/*
+	 * public List<Object> findSubjectCountOfClasss(int classid, int userid) {
+	 * return subjectRepository.findSubjectCountOfClasss(classid, userid); }
+	 */
 
 }

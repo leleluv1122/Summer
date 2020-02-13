@@ -24,7 +24,7 @@ public class Register {
 	@JoinColumn(name = "userId")
 	User user;
 
-	String grade;
-	int year;
-	int term;
+	@ManyToOne
+	@JoinColumn(name = "grade")
+	Grade grade;
 }
