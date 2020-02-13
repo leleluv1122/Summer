@@ -31,6 +31,11 @@ public class GuestController { // 로그인 하지 않은 사용자를 위한 �
 		return "guest/login"; // 로그인 페이지 URL
 	}
 
+	@RequestMapping("guest/schedule")
+	public String schedule() {
+		return "guest/schedule";
+	}
+
 	@RequestMapping(value = "guest/register", method = RequestMethod.GET)
 	public String register(Model model, UserRegistrationModel userModel) {
 			model.addAttribute("departments", departmentService.findAll());
