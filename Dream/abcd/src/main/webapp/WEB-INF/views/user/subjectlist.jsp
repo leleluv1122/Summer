@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="java.util.*"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="my"%>
@@ -122,11 +123,16 @@ table {
 								</tr>
 							</c:forEach>
 						</tbody>
-					</table></td>
+					</table>
+					<div style="text-align:center;">
+						<my:pagination pageSize="${ pagination.sz }"
+							recordCount="${ pagination.recordCount }" queryStringName="pg" />
+					</div>
+				</td>
 			</tr>
+
 		</table>
-		<my:pagination pageSize="${ pagination.sz }"
-			recordCount="${ pagination.recordCount }" queryStringName="pg" />
+
 
 		<div class="footer">
 			<a href="http://www.hansei.ac.kr"> <img

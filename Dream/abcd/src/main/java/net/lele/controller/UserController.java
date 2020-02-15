@@ -9,11 +9,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import net.lele.domain.Schedule;
 import net.lele.domain.Subject;
 import net.lele.model.Pagination;
 import net.lele.service.DepartmentService;
 import net.lele.service.ProfessorService;
 import net.lele.service.RegisterService;
+import net.lele.service.ScheduleService;
+import net.lele.service.SchedulemonthService;
 import net.lele.service.ScholarshipService;
 import net.lele.service.SubjectService;
 import net.lele.service.UserService;
@@ -33,10 +36,29 @@ public class UserController {
 	RegisterService registerService;
 	@Autowired
 	ScholarshipService scholarshipService;
+	@Autowired
+	ScheduleService scheduleService;
+	@Autowired
+	SchedulemonthService schedulemonthService;
 
 	@RequestMapping("user/index")
-	public String index() throws Exception {
+	public String index(Model model) throws Exception {
+		model.addAttribute("schedule", scheduleService.findAll());
 		return "user/index"; // 로그인한 사용자를 위한 첫 페이지 URL
+	}
+
+	@RequestMapping(value = "user/schedule", method = RequestMethod.GET)
+	public String schedule(Pagination pagination, Model model) throws Exception {
+		/* List<Schedule> list = scheduleService.findAll(pagination); */
+		List<Schedule> list;
+		if(pagination.getSm() == 0)
+			list = scheduleService.findAll(pagination);
+		else
+			list = scheduleService.findByStartmonth(pagination);
+		model.addAttribute("list", list);
+		model.addAttribute("sm", schedulemonthService.findAll());
+		/* model.addAttribute("schedule", scheduleService.findAll()); */
+		return "user/schedule";
 	}
 
 	@RequestMapping(value = "user/info", method = RequestMethod.GET)
@@ -66,7 +88,7 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "user/register", method = RequestMethod.GET)
-	public String register(Model model) throws Exception { // 사용자id찾아서 내 성적만 보기 아직못함 시벌탱
+	public String register(Model model) throws Exception {
 		model.addAttribute("user", userService.findAll());
 		model.addAttribute("register", registerService.findAll());
 		/* model.addAttribute("count", subjectService.findSubjectCountOfClasss()); */
@@ -74,7 +96,7 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "user/allregister", method = RequestMethod.GET)
-	public String allregister(Model model) throws Exception { // 사용자id찾아서 내 성적만 보기 아직못함 시벌탱
+	public String allregister(Model model) throws Exception {
 		model.addAttribute("user", userService.findAll());
 		model.addAttribute("register", registerService.findAll());
 		return "user/allregister";
