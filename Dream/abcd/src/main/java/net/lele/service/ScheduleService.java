@@ -18,7 +18,6 @@ public class ScheduleService {
 		return scheduleRepository.findAll(pagination);
 	}
 
-
 	public List<Schedule> findByStartmonth(Pagination pagination) {
 		return scheduleRepository.findByStartmonth(pagination);
 	}

@@ -55,7 +55,7 @@
 			</span> <span> <a class="btn btn-light" style="color: black"
 				href="${R}user/register">취득성적(학기)</a>
 			</span> <span> <a class="btn btn-light" style="color: black"
-				href="${R}user/allregister">취득성적</a></span><a class="btn btn-light"
+				href="${R}user/allregister">취득성적</a></span><span><a class="btn btn-light"
 				style="color: black" href="${R}user/scholarship">장학내역</a></span>
 		</div>
 		<table>

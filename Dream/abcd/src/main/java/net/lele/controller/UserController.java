@@ -56,7 +56,7 @@ public class UserController {
 		else
 			list = scheduleService.findByStartmonth(pagination);
 		model.addAttribute("list", list);
-		model.addAttribute("sm", schedulemonthService.findAll());
+		model.addAttribute("smm", schedulemonthService.findAll());
 		/* model.addAttribute("schedule", scheduleService.findAll()); */
 		return "user/schedule";
 	}

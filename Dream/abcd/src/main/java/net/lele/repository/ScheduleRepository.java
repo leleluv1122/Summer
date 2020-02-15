@@ -33,5 +33,4 @@ public interface ScheduleRepository extends JpaRepository<Schedule, Integer> {
 		return page.getContent();
 	}
 
-	/* Schedule findBystartmonth(int startmonth, Pageable pageable); */
 }

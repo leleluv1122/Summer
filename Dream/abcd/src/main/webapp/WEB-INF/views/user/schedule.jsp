@@ -90,7 +90,7 @@ table {
 							<form:select path="sm" class="form-control">
 								<form:option value="0">전체</form:option>
 								<form:options itemValue="id" itemLabel="name" 
-								items="${ sm }" />
+								items="${smm}" />
 							</form:select>
 							<button type="submit" class="btn btn-default">검색</button>
 						</form:form>
