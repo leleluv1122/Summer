@@ -108,4 +108,5 @@ public class UserController {
 		model.addAttribute("scholarship", scholarshipService.findAll());
 		return "user/scholarship";
 	}
+
 }

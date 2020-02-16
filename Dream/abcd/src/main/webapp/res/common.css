@@ -1,10 +1,10 @@
 /* body { font-family: 굴림체; } */
 
-thead th { background-color: #eee; }
+/* thead th { background-color: #eee; } */
 
 /* tr:hover td { background-color: #ffe; cursor: pointer; } */
 
-input.form-control.w100 { width: 100px; }
+/* input.form-control.w100 { width: 100px; }
 input.form-control.w200 { width: 200px; }
 input.form-control.w300 { width: 300px; }
 input.form-control.w400 { width: 400px; }
@@ -28,7 +28,7 @@ div.container {
 td {
 	padding: 5px;
 	line-height: 180%;
-}
+} */
 
 td:nth-child(1) {
 	width: 15%;
@@ -46,16 +46,16 @@ img {
 	margin-bottom: 5px;
 }
 
-div.menu {
+/* div.menu {
 	background: linear-gradient(#eee, #fff);
 	font-weight: bold;
 	padding: 12px;
 	border-radius: 8px;
-}
+} */
 
-div.menu span {
+/* div.menu span {
 	margin-right: 50px;
-}
+} */
 
 div.footer {
 	border-top: 1px solid #ddd;

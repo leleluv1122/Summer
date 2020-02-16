@@ -28,7 +28,6 @@
     <fullyQualifiedTypeName name="javax.persistence.OneToOne"/>
     <fullyQualifiedTypeName name="javax.validation.constraints.Max"/>
     <fullyQualifiedTypeName name="net.lele.domain.Subject"/>
-    <fullyQualifiedTypeName name="net.lele.model.Pagination"/>
     <fullyQualifiedTypeName name="org.hibernate.annotations.common.util.impl.Log_.logger"/>
     <fullyQualifiedTypeName name="org.hibernate.validator.internal.util.logging.Log_.logger"/>
     <fullyQualifiedTypeName name="org.hibernate.validator.internal.util.logging.Log"/>
@@ -46,11 +45,14 @@
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.util.Date"/>
-    <fullyQualifiedTypeName name="org.springframework.data.domain.Pageable"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="org.springframework.data.domain.PageRequest"/>
     <fullyQualifiedTypeName name="org.springframework.data.domain.Sort"/>
     <fullyQualifiedTypeName name="org.springframework.data.domain.Sort.Direction"/>
-    <fullyQualifiedTypeName name="net.lele.domain.Schedule"/>
     <fullyQualifiedTypeName name="net.lele.model.Pagination1"/>
+    <fullyQualifiedTypeName name="org.springframework.data.domain.Pageable"/>
+    <fullyQualifiedTypeName name="net.lele.domain.Schedule"/>
+    <fullyQualifiedTypeName name="net.lele.model.Pagination"/>
+    <fullyQualifiedTypeName name="net.lele.model.Paginationsc"/>
+    <fullyQualifiedTypeName name="net.lele.service.SchedulemonthService"/>
 </qualifiedTypeNameHistroy>
