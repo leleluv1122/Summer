@@ -47,8 +47,6 @@
 					style="font-size: 1.5em;" href="${R}user/allregister">취득성적</a></li>
 				<li class="nav-item"><a class="nav-link"
 					style="font-size: 1.5em;" href="${R}user/scholarship">장학내역</a></li>
-				<li class="nav-item"><a class="nav-link"
-					style="font-size: 1.5em;" href="${R}user/scholarshipapply">장학금신청</a></li>
 
 				<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle" href="#"

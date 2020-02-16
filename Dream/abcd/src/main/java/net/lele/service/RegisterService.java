@@ -16,4 +16,9 @@ public class RegisterService {
 	public List<Register> findAll() {
 		return registerRepository.findAll();
 	}
+
+	/*
+	 * public List<Object> finduserid(int clas){ return
+	 * registerRepository.finduserid(clas); }
+	 */
 }

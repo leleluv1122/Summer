@@ -28,7 +28,7 @@ table {
 <title>취득성적</title>
 </head>
 <body>
-<%@ include file="nav.jsp"%>
+	<%@ include file="nav.jsp"%>
 	<div class="container">
 		<table>
 			<tr>
@@ -36,7 +36,7 @@ table {
 					style="width: 15%; vertical-align: top; border-right: 1px solid #ddd;">
 					<hr />
 					<p>
-						<a style="color:black;" href="${R}user/schedule">학사일정</a>
+						<a style="color: black;" href="${R}user/schedule">학사일정</a>
 					</p>
 					<p>뀨뀨</p>
 					<p>뜌잇</p>
@@ -50,20 +50,20 @@ table {
 					<table style="width: 100%;">
 						<thead>
 							<tr>
+								<th style="text-align: center">연도</th>
+								<th style="text-align: center">학기</th>
 								<th style="text-align: center">전공기초</th>
 								<th style="text-align: center">전공선택</th>
 								<th style="text-align: center">전공필수</th>
-								<th style="text-align: center">교양필수</th>
-								<th style="text-align: center">교양선택</th>
 								<th style="text-align: center">총 학점</th>
-								<th style="text-align: center">평점</th>
-								<th style="text-align: center">등수</th>
 							</tr>
 						</thead>
 						<tbody>
-
 							<tr>
-
+								<sec:authentication property="user.userId" var="currentUserId" />
+								<%-- <c:if test="${currentUserId == r1.userid }">
+									<td>${r1.userid }</td>
+								</c:if> --%>
 							</tr>
 						</tbody>
 					</table>

@@ -10,4 +10,12 @@ public interface RegisterRepository extends JpaRepository<Register, Integer> {
 	 * "WHERE r.subject.classs = ?1 GROUP BY r.user.id = ?2") List<Object> count(int
 	 * id, int userid);
 	 */
+
+	/*
+	 * @Query("SELECT r.user.userId as userid FROM register r" +
+	 * "WHERE r.subject.classs = ?1" + "GROUP BY r.user.userId") List<Object>
+	 * finduserid(int clas);
+	 */
 }
+
+/* , count(*)*3 as cnt */

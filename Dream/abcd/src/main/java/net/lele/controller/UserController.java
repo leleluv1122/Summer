@@ -99,6 +99,12 @@ public class UserController {
 	public String allregister(Model model) throws Exception {
 		model.addAttribute("user", userService.findAll());
 		model.addAttribute("register", registerService.findAll());
+		/*
+		 * List<Object> r1 = registerService.finduserid('1'); model.addAttribute("r1",
+		 * r1); List<Object> r2 = registerService.finduserid('2');
+		 * model.addAttribute("r2", r2); List<Object> r3 =
+		 * registerService.finduserid('3'); model.addAttribute("r3", r3);
+		 */
 		return "user/allregister";
 	}
 
