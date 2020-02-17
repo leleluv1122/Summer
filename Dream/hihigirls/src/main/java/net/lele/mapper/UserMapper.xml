@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="net.lele.demo.board.mapper.BoardMapper">
+	<insert id="InsertUser" parameterType="net.lele.domain.User"
+		useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO
+		USER
+		(ID,USERID,PASSWORD,NAME,ADDRESS,
+		ADDRESS_DETAIL, PHONE, USERTYPE)
+		VALUES(#{id},#{userid},#{password},#{name},
+		#{address},
+		#{address_detail}, #{phone}, #{userType})
+	</insert>
+
+	<select id="findByUserId" parameterType="String"
+		resultType="net.lele.domain.User">
+		SELECT * FROM User WHERE userid = #{userid}
+	</select>
+</mapper>

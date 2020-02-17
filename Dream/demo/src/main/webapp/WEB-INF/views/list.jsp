@@ -29,9 +29,10 @@
 					<th>Date</th>
 				</tr>
 				<c:forEach var="l" items="${list}">
-					<tr onclick="location.href='/detail/${l.bno}'">
+					<tr>
 						<td>${l.bno}</td>
-						<td>${l.subject}</td>
+						<td style="cursor: pointer"
+							onclick="location.href='/detail/${l.bno}'">${l.subject}</td>
 						<td>${l.writer}</td>
 						<td><fmt:formatDate value="${l.created_date}"
 								pattern="yyyy.MM.dd HH:mm:ss" /></td>
